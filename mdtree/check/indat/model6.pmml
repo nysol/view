@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.0">
+	<Header copyright="KGMOD">
+		<Application name="mbonsai" version="1.0"/>
+		<Timestamp>2014/09/21 23:09:46</Timestamp>
+	</Header>
+	<DataDictionary numberOfFields="5">
+		<DataField name="天気" optype="categorical" dataType="string">
+			<Value value="晴れ"/>
+			<Value value="曇り"/>
+			<Value value="雨"/>
+		</DataField>
+		<DataField name="風" optype="categorical" dataType="string">
+			<Value value="なし"/>
+			<Value value="あり"/>
+		</DataField>
+		<DataField name="気温" optype="continuous" dataType="double"/>
+		<DataField name="湿度" optype="continuous" dataType="double"/>
+		<DataField name="ゴルフ" optype="categorical" dataType="string">
+			<Value value="しなかった"/>
+			<Value value="した"/>
+		</DataField>
+	</DataDictionary>
+	<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+		<Extension extender="KGMOD" name="alpha" value="0.010000"/>
+		<MiningSchema>
+			<MiningField name="天気" missingValueTreatment="asMean"/>
+			<MiningField name="風" missingValueTreatment="asMean"/>
+			<MiningField name="気温" missingValueTreatment="asMean"/>
+			<MiningField name="湿度" missingValueTreatment="asMean"/>
+			<MiningField name="ゴルフ" usageType="predicted"/>
+		</MiningSchema>
+		<Node id="0" score="した" recordCount="14" >
+			<Extension extender="KGMOD" name="complexity penalty" value="0.071429"/>
+			<True/>
+			<ScoreDistribution value="しなかった" recordCount="5"/>
+			<ScoreDistribution value="した" recordCount="9"/>
+			<Node id="1" score="しなかった" recordCount="10" >
+				<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+				<SimpleSetPredicate field="天気" booleanOperator="isIn">
+					<Array n="2" type="string">"晴れ" "雨"</Array>
+				</SimpleSetPredicate>
+				<ScoreDistribution value="しなかった" recordCount="5"/>
+				<ScoreDistribution value="した" recordCount="5"/>
+				<Node id="2" score="した" recordCount="8" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.071429"/>
+					<SimplePredicate field="気温" operator="lessOrEqual" value="77.5"/>
+					<ScoreDistribution value="しなかった" recordCount="3"/>
+					<ScoreDistribution value="した" recordCount="5"/>
+					<Node id="3" score="しなかった" recordCount="6" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<SimplePredicate field="気温" operator="lessOrEqual" value="73.5"/>
+						<ScoreDistribution value="しなかった" recordCount="3"/>
+						<ScoreDistribution value="した" recordCount="3"/>
+						<Node id="4" score="した" recordCount="4" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.071429"/>
+							<SimplePredicate field="気温" operator="lessOrEqual" value="70.5"/>
+							<ScoreDistribution value="しなかった" recordCount="1"/>
+							<ScoreDistribution value="した" recordCount="3"/>
+							<Node id="5" score="しなかった" recordCount="1" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<SimplePredicate field="気温" operator="lessOrEqual" value="66.5"/>
+								<ScoreDistribution value="しなかった" recordCount="1"/>
+								<ScoreDistribution value="した" recordCount="0"/>
+							</Node>
+							<Node id="6" score="した" recordCount="3" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<SimplePredicate field="気温" operator="greaterThan" value="66.5"/>
+								<ScoreDistribution value="しなかった" recordCount="0"/>
+								<ScoreDistribution value="した" recordCount="3"/>
+							</Node>
+						</Node>
+						<Node id="7" score="しなかった" recordCount="2" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<SimplePredicate field="気温" operator="greaterThan" value="70.5"/>
+							<ScoreDistribution value="しなかった" recordCount="2"/>
+							<ScoreDistribution value="した" recordCount="0"/>
+						</Node>
+					</Node>
+					<Node id="8" score="した" recordCount="2" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<SimplePredicate field="気温" operator="greaterThan" value="73.5"/>
+						<ScoreDistribution value="しなかった" recordCount="0"/>
+						<ScoreDistribution value="した" recordCount="2"/>
+					</Node>
+				</Node>
+				<Node id="9" score="しなかった" recordCount="2" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+					<SimplePredicate field="気温" operator="greaterThan" value="77.5"/>
+					<ScoreDistribution value="しなかった" recordCount="2"/>
+					<ScoreDistribution value="した" recordCount="0"/>
+				</Node>
+			</Node>
+			<Node id="10" score="した" recordCount="4" >
+				<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+				<SimpleSetPredicate field="天気" booleanOperator="isNotIn">
+					<Array n="2" type="string">"晴れ" "雨"</Array>
+				</SimpleSetPredicate>
+				<ScoreDistribution value="しなかった" recordCount="0"/>
+				<ScoreDistribution value="した" recordCount="4"/>
+			</Node>
+		</Node>
+	</TreeModel>
+</PMML>

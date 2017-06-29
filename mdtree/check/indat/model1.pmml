@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.0">
+	<Header copyright="KGMOD">
+		<Application name="mbonsai" version="1.0"/>
+		<Timestamp>2014/09/21 23:09:29</Timestamp>
+	</Header>
+	<DataDictionary numberOfFields="32">
+		<DataField name="F0001" optype="categorical" dataType="string">
+			<Value value="1"/>
+			<Value value="0"/>
+		</DataField>
+		<DataField name="F0062" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0185" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0190" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0272" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0349" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0418" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0427" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0453" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0518" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0546" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0571" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0600" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0915" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0936" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0945" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0966" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0996" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1134" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1238" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1241" optype="categorical" dataType="string">
+			<Value value="1"/>
+			<Value value="0"/>
+		</DataField>
+		<DataField name="F1251" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1276" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1342" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1349" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1380" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1397" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1433" optype="categorical" dataType="string">
+			<Value value="1"/>
+			<Value value="0"/>
+		</DataField>
+		<DataField name="F1434" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1453" optype="categorical" dataType="string">
+			<Value value="1"/>
+			<Value value="0"/>
+		</DataField>
+		<DataField name="F1481" optype="categorical" dataType="string">
+			<Value value="1"/>
+			<Value value="0"/>
+		</DataField>
+		<DataField name="class" optype="categorical" dataType="string">
+			<Value value="ad"/>
+			<Value value="nonad"/>
+		</DataField>
+	</DataDictionary>
+	<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+		<Extension extender="KGMOD" name="1SE alpha" value="0.000000"/>
+		<Extension extender="KGMOD" name="min alpha" value="0.000000"/>
+		<MiningSchema>
+			<MiningField name="F0001" missingValueTreatment="asMean"/>
+			<MiningField name="F0062" missingValueTreatment="asMean"/>
+			<MiningField name="F0185" missingValueTreatment="asMean"/>
+			<MiningField name="F0190" missingValueTreatment="asMean"/>
+			<MiningField name="F0272" missingValueTreatment="asMean"/>
+			<MiningField name="F0349" missingValueTreatment="asMean"/>
+			<MiningField name="F0418" missingValueTreatment="asMean"/>
+			<MiningField name="F0427" missingValueTreatment="asMean"/>
+			<MiningField name="F0453" missingValueTreatment="asMean"/>
+			<MiningField name="F0518" missingValueTreatment="asMean"/>
+			<MiningField name="F0546" missingValueTreatment="asMean"/>
+			<MiningField name="F0571" missingValueTreatment="asMean"/>
+			<MiningField name="F0600" missingValueTreatment="asMean"/>
+			<MiningField name="F0915" missingValueTreatment="asMean"/>
+			<MiningField name="F0936" missingValueTreatment="asMean"/>
+			<MiningField name="F0945" missingValueTreatment="asMean"/>
+			<MiningField name="F0966" missingValueTreatment="asMean"/>
+			<MiningField name="F0996" missingValueTreatment="asMean"/>
+			<MiningField name="F1134" missingValueTreatment="asMean"/>
+			<MiningField name="F1238" missingValueTreatment="asMean"/>
+			<MiningField name="F1241" missingValueTreatment="asMean"/>
+			<MiningField name="F1251" missingValueTreatment="asMean"/>
+			<MiningField name="F1276" missingValueTreatment="asMean"/>
+			<MiningField name="F1342" missingValueTreatment="asMean"/>
+			<MiningField name="F1349" missingValueTreatment="asMean"/>
+			<MiningField name="F1380" missingValueTreatment="asMean"/>
+			<MiningField name="F1397" missingValueTreatment="asMean"/>
+			<MiningField name="F1433" missingValueTreatment="asMean"/>
+			<MiningField name="F1434" missingValueTreatment="asMean"/>
+			<MiningField name="F1453" missingValueTreatment="asMean"/>
+			<MiningField name="F1481" missingValueTreatment="asMean"/>
+			<MiningField name="class" usageType="predicted"/>
+		</MiningSchema>
+		<Node id="0" score="nonad" recordCount="3279" >
+			<Extension extender="KGMOD" name="complexity penalty" value="0.052150"/>
+			<True/>
+			<ScoreDistribution value="ad" recordCount="459"/>
+			<ScoreDistribution value="nonad" recordCount="2820"/>
+			<Node id="1" score="ad" recordCount="207" >
+				<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+				<SimpleSetPredicate field="F1241" booleanOperator="isIn">
+					<Array n="1" type="string">"1"</Array>
+				</SimpleSetPredicate>
+				<ScoreDistribution value="ad" recordCount="189"/>
+				<ScoreDistribution value="nonad" recordCount="18"/>
+			</Node>
+			<Node id="2" score="nonad" recordCount="3072" >
+				<Extension extender="KGMOD" name="complexity penalty" value="0.021653"/>
+				<SimpleSetPredicate field="F1241" booleanOperator="isNotIn">
+					<Array n="1" type="string">"1"</Array>
+				</SimpleSetPredicate>
+				<ScoreDistribution value="ad" recordCount="270"/>
+				<ScoreDistribution value="nonad" recordCount="2802"/>
+				<Node id="3" score="nonad" recordCount="2995" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.009759"/>
+					<SimpleSetPredicate field="F0349" booleanOperator="isIn">
+						<Array n="1" type="string">"0"</Array>
+					</SimpleSetPredicate>
+					<ScoreDistribution value="ad" recordCount="196"/>
+					<ScoreDistribution value="nonad" recordCount="2799"/>
+					<Node id="4" score="nonad" recordCount="2961" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<SimpleSetPredicate field="F1397" booleanOperator="isIn">
+							<Array n="1" type="string">"0"</Array>
+						</SimpleSetPredicate>
+						<ScoreDistribution value="ad" recordCount="163"/>
+						<ScoreDistribution value="nonad" recordCount="2798"/>
+					</Node>
+					<Node id="5" score="ad" recordCount="34" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<SimpleSetPredicate field="F1397" booleanOperator="isNotIn">
+							<Array n="1" type="string">"0"</Array>
+						</SimpleSetPredicate>
+						<ScoreDistribution value="ad" recordCount="33"/>
+						<ScoreDistribution value="nonad" recordCount="1"/>
+					</Node>
+				</Node>
+				<Node id="6" score="ad" recordCount="77" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+					<SimpleSetPredicate field="F0349" booleanOperator="isNotIn">
+						<Array n="1" type="string">"0"</Array>
+					</SimpleSetPredicate>
+					<ScoreDistribution value="ad" recordCount="74"/>
+					<ScoreDistribution value="nonad" recordCount="3"/>
+				</Node>
+			</Node>
+		</Node>
+	</TreeModel>
+</PMML>

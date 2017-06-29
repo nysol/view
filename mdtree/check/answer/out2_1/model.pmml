@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.0">
+	<Header copyright="KGMOD">
+		<Application name="mbonsai" version="1.0"/>
+	</Header>
+	<DataDictionary numberOfFields="4">
+		<DataField name="性別" optype="categorical" dataType="string">
+			<Value value="男"/>
+			<Value value="女"/>
+		</DataField>
+		<DataField name="来店距離" optype="continuous" dataType="double"/>
+		<DataField name="購入パターン" optype="categorical" dataType="string">
+			<Value value="A"/>
+			<Value value="B"/>
+			<Value value="C"/>
+			<Value value="D"/>
+			<Value value="E"/>
+		</DataField>
+		<DataField name="入院歴" optype="categorical" dataType="string">
+			<Value value="あり"/>
+			<Value value="なし"/>
+		</DataField>
+	</DataDictionary>
+	<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+		<Extension extender="KGMOD" name="alpha" value="0.010000"/>
+		<MiningSchema>
+			<MiningField name="性別" missingValueTreatment="asMean"/>
+			<MiningField name="購入パターン">
+				<Extension extender="KGMOD" name="alphabetIndex">
+					<alphabetIndex alphabet="A" index="1"/>
+					<alphabetIndex alphabet="B" index="2"/>
+					<alphabetIndex alphabet="C" index="3"/>
+					<alphabetIndex alphabet="D" index="4"/>
+					<alphabetIndex alphabet="E" index="5"/>
+				</Extension>
+				<Extension extender="KGMOD" name="indexSize" value="5"/>
+				<Extension extender="KGMOD" name="order" value="false"/>
+				<Extension extender="KGMOD" name="subsequence" value="false"/>
+				<Extension extender="KGMOD" name="indexLen" value="5"/>
+			</MiningField>
+			<MiningField name="来店距離" missingValueTreatment="asMean"/>
+			<MiningField name="入院歴" usageType="predicted"/>
+		</MiningSchema>
+		<Node id="0" score="あり" recordCount="81" >
+			<Extension extender="KGMOD" name="complexity penalty" value="0.185185"/>
+			<True/>
+			<ScoreDistribution value="あり" recordCount="49"/>
+			<ScoreDistribution value="なし" recordCount="32"/>
+			<Node id="1" score="なし" recordCount="39" >
+				<Extension extender="KGMOD" name="complexity penalty" value="0.074074"/>
+				<SimplePredicate field="来店距離" operator="lessOrEqual" value="2.15"/>
+				<ScoreDistribution value="あり" recordCount="12"/>
+				<ScoreDistribution value="なし" recordCount="27"/>
+				<Node id="2" score="あり" recordCount="8" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.006173"/>
+					<Extension extender="KGMOD" name="patternPredicate" value="substring">
+						<SimplePredicate field="購入パターン" operator="contain">
+							<index seqNo="1" value="4"/>
+							<index seqNo="2" value="4"/>
+						</SimplePredicate>
+					</Extension>
+					<ScoreDistribution value="あり" recordCount="7"/>
+					<ScoreDistribution value="なし" recordCount="1"/>
+					<Node id="3" score="あり" recordCount="2" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<SimpleSetPredicate field="性別" booleanOperator="isIn">
+							<Array n="1" type="string">"男"</Array>
+						</SimpleSetPredicate>
+						<ScoreDistribution value="あり" recordCount="1"/>
+						<ScoreDistribution value="なし" recordCount="1"/>
+						<Node id="4" score="あり" recordCount="1" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="購入パターン" operator="contain">
+									<index seqNo="1" value="1"/>
+									<index seqNo="2" value="4"/>
+									<index seqNo="3" value="4"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="あり" recordCount="1"/>
+							<ScoreDistribution value="なし" recordCount="0"/>
+						</Node>
+						<Node id="5" score="なし" recordCount="1" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="購入パターン" operator="notcontain">
+									<index seqNo="1" value="1"/>
+									<index seqNo="2" value="4"/>
+									<index seqNo="3" value="4"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="あり" recordCount="0"/>
+							<ScoreDistribution value="なし" recordCount="1"/>
+						</Node>
+					</Node>
+					<Node id="6" score="あり" recordCount="6" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<SimpleSetPredicate field="性別" booleanOperator="isNotIn">
+							<Array n="1" type="string">"男"</Array>
+						</SimpleSetPredicate>
+						<ScoreDistribution value="あり" recordCount="6"/>
+						<ScoreDistribution value="なし" recordCount="0"/>
+					</Node>
+				</Node>
+				<Node id="7" score="なし" recordCount="31" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.061728"/>
+					<Extension extender="KGMOD" name="patternPredicate" value="substring">
+						<SimplePredicate field="購入パターン" operator="notcontain">
+							<index seqNo="1" value="4"/>
+							<index seqNo="2" value="4"/>
+						</SimplePredicate>
+					</Extension>
+					<ScoreDistribution value="あり" recordCount="5"/>
+					<ScoreDistribution value="なし" recordCount="26"/>
+					<Node id="8" score="あり" recordCount="5" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<Extension extender="KGMOD" name="patternPredicate" value="substring">
+							<SimplePredicate field="購入パターン" operator="contain">
+								<index seqNo="1" value="1"/>
+								<index seqNo="2" value="2"/>
+							</SimplePredicate>
+						</Extension>
+						<ScoreDistribution value="あり" recordCount="5"/>
+						<ScoreDistribution value="なし" recordCount="0"/>
+					</Node>
+					<Node id="9" score="なし" recordCount="26" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<Extension extender="KGMOD" name="patternPredicate" value="substring">
+							<SimplePredicate field="購入パターン" operator="notcontain">
+								<index seqNo="1" value="1"/>
+								<index seqNo="2" value="2"/>
+							</SimplePredicate>
+						</Extension>
+						<ScoreDistribution value="あり" recordCount="0"/>
+						<ScoreDistribution value="なし" recordCount="26"/>
+					</Node>
+				</Node>
+			</Node>
+			<Node id="10" score="あり" recordCount="42" >
+				<Extension extender="KGMOD" name="complexity penalty" value="0.037037"/>
+				<SimplePredicate field="来店距離" operator="greaterThan" value="2.15"/>
+				<ScoreDistribution value="あり" recordCount="37"/>
+				<ScoreDistribution value="なし" recordCount="5"/>
+				<Node id="11" score="なし" recordCount="3" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+					<Extension extender="KGMOD" name="patternPredicate" value="substring">
+						<SimplePredicate field="購入パターン" operator="contain">
+							<index seqNo="1" value="2"/>
+							<index seqNo="2" value="1"/>
+							<index seqNo="3" value="1"/>
+						</SimplePredicate>
+					</Extension>
+					<ScoreDistribution value="あり" recordCount="0"/>
+					<ScoreDistribution value="なし" recordCount="3"/>
+				</Node>
+				<Node id="12" score="あり" recordCount="39" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.012346"/>
+					<Extension extender="KGMOD" name="patternPredicate" value="substring">
+						<SimplePredicate field="購入パターン" operator="notcontain">
+							<index seqNo="1" value="2"/>
+							<index seqNo="2" value="1"/>
+							<index seqNo="3" value="1"/>
+						</SimplePredicate>
+					</Extension>
+					<ScoreDistribution value="あり" recordCount="37"/>
+					<ScoreDistribution value="なし" recordCount="2"/>
+					<Node id="13" score="あり" recordCount="32" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<Extension extender="KGMOD" name="patternPredicate" value="substring">
+							<SimplePredicate field="購入パターン" operator="contain">
+								<index seqNo="1" value="1"/>
+							</SimplePredicate>
+						</Extension>
+						<ScoreDistribution value="あり" recordCount="32"/>
+						<ScoreDistribution value="なし" recordCount="0"/>
+					</Node>
+					<Node id="14" score="あり" recordCount="7" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<Extension extender="KGMOD" name="patternPredicate" value="substring">
+							<SimplePredicate field="購入パターン" operator="notcontain">
+								<index seqNo="1" value="1"/>
+							</SimplePredicate>
+						</Extension>
+						<ScoreDistribution value="あり" recordCount="5"/>
+						<ScoreDistribution value="なし" recordCount="2"/>
+						<Node id="15" score="あり" recordCount="5" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="購入パターン" operator="contain">
+									<index seqNo="1" value="4"/>
+									<index seqNo="2" value="4"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="あり" recordCount="5"/>
+							<ScoreDistribution value="なし" recordCount="0"/>
+						</Node>
+						<Node id="16" score="なし" recordCount="2" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="購入パターン" operator="notcontain">
+									<index seqNo="1" value="4"/>
+									<index seqNo="2" value="4"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="あり" recordCount="0"/>
+							<ScoreDistribution value="なし" recordCount="2"/>
+						</Node>
+					</Node>
+				</Node>
+			</Node>
+		</Node>
+	</TreeModel>
+</PMML>

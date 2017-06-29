@@ -1,0 +1,29 @@
+digraph G {
+  edge [dir=none]
+  subgraph cluster_1 {
+label="#1_1_0.6666666667"
+n_5 [label="a_0.4666666667" height=1.6111111115 width=2.4166666672500003 style="setlinewidth(1)" ]
+n_6 [label="b_0.4" height=1.333333333 width=1.9999999995 style="setlinewidth(1)" ]
+n_5 -> n_6 [label="0.1" style="setlinewidth(1)" ]
+  }
+  subgraph cluster_2 {
+label="#1_2_0.4"
+n_8 [label="d_0.2666666667" height=0.777777778 width=1.166666667 style="setlinewidth(1)" ]
+n_9 [label="e_0.3333333333" height=1.0555555555 width=1.5833333332500001 style="setlinewidth(1)" ]
+n_8 -> n_9 [label="0.1" style="setlinewidth(1)" ]
+  }
+  subgraph cluster_3 {
+label="#2_1_0.8"
+cluster_1 []
+n_7 [label="c_0.3333333333" height=1.0555555555 width=1.5833333332500001 style="setlinewidth(1)" ]
+cluster_1 -> n_7 [label="0.2" style="setlinewidth(7.333333333)" ]
+  }
+  subgraph cluster_4 {
+label="#3_1"
+cluster_2 []
+cluster_3 []
+n_10 [label="f_0.2" height=0.5 width=0.75 style="setlinewidth(1)" ]
+cluster_2 -> cluster_3 [label="0.3" style="setlinewidth(13.66666667)" ]
+cluster_3 -> n_10 [label="0.4" style="setlinewidth(20)" ]
+  }
+}

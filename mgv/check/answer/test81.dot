@@ -1,0 +1,13 @@
+digraph G {
+  edge [dir=none]
+n_2 [label="a" height=1.1153846155 width=1.67307692325 color="#FF0000" style="setlinewidth(1)" ]
+n_3 [label="b" height=1.5 width=2.25 color="#0000FF" style="setlinewidth(1)" ]
+n_4 [label="c" height=1.1923076925 width=1.78846153875 color="#00FF00" style="setlinewidth(1)" ]
+n_5 [label="d" height=0.9615384615 width=1.44230769225 color="#00FFFF" style="setlinewidth(1)" ]
+n_6 [label="e" height=0.5 width=0.75 color="#FFFF00" style="setlinewidth(1)" ]
+n_2 -> n_3 [style="setlinewidth(3.25)" color="#FF0000" ]
+n_2 -> n_4 [style="setlinewidth(10)" color="#00FF00" ]
+n_3 -> n_5 [style="setlinewidth(3.25)" color="#FF0000" ]
+n_4 -> n_6 [style="setlinewidth(1.75)" color="#FFFF00" ]
+n_5 -> n_6 [style="setlinewidth(1)" color="#0000FF" ]
+}

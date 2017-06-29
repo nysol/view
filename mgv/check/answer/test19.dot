@@ -1,0 +1,40 @@
+digraph G {
+  edge [dir=none]
+n_15 [label="j" height=0.5 width=0.75 color="#FF0000" style="setlinewidth(1)" ]
+n_14 [label="i" height=0.5 width=0.75 color="#FF0000" style="setlinewidth(1)" ]
+  subgraph cluster_4 {
+label="#1_3"
+n_12 [label="g" height=0.642857143 width=0.9642857144999999 color="#00FF00" style="setlinewidth(1)" ]
+n_13 [label="h" height=0.642857143 width=0.9642857144999999 color="#0000FF" style="setlinewidth(1)" ]
+n_12 -> n_13 [style="setlinewidth(1)" ]
+  }
+  subgraph cluster_5 {
+label="#2_1"
+cluster_3 []
+cluster_2 []
+cluster_2 -> cluster_3 [style="setlinewidth(20)" ]
+    subgraph cluster_2 {
+label="#1_1"
+color="#0000FF"
+style="setlinewidth(1)"
+n_6 [label="a" height=0.9285714285 width=1.39285714275 color="#FF0000" style="setlinewidth(1)" ]
+n_7 [label="b" height=0.9285714285 width=1.39285714275 color="#00FF00" style="setlinewidth(1)" ]
+n_9 [label="d" height=0.9285714285 width=1.39285714275 color="#00FF00" style="setlinewidth(1)" ]
+n_10 [label="e" height=1.0714285715 width=1.60714285725 color="#0000FF" style="setlinewidth(1)" ]
+n_6 -> n_7 [style="setlinewidth(1)" ]
+n_6 -> n_9 [style="setlinewidth(1)" ]
+n_7 -> n_9 [style="setlinewidth(1)" ]
+n_6 -> n_10 [style="setlinewidth(20)" ]
+n_7 -> n_10 [style="setlinewidth(1)" ]
+n_9 -> n_10 [style="setlinewidth(20)" ]
+    }
+    subgraph cluster_3 {
+label="#1_2"
+color="#0000FF"
+style="setlinewidth(1)"
+n_8 [label="c" height=0.7857142855 width=1.17857142825 color="#FF0000" style="setlinewidth(1)" ]
+n_11 [label="f" height=0.642857143 width=0.9642857144999999 color="#FF0000" style="setlinewidth(1)" ]
+n_8 -> n_11 [style="setlinewidth(1)" ]
+    }
+  }
+}

@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.0">
+	<Header copyright="KGMOD">
+		<Application name="mbonsai" version="1.0"/>
+		<Timestamp>2014/09/21 23:09:29</Timestamp>
+	</Header>
+	<DataDictionary numberOfFields="35">
+		<DataField name="F0001" optype="categorical" dataType="string">
+			<Value value="1"/>
+			<Value value="0"/>
+		</DataField>
+		<DataField name="F0062" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0185" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0190" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0272" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0349" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0418" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0427" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0453" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0518" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0546" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0571" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0600" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0915" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0936" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0945" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0966" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F0996" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1134" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1238" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1241" optype="categorical" dataType="string">
+			<Value value="1"/>
+			<Value value="0"/>
+		</DataField>
+		<DataField name="F1251" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1276" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1342" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1349" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1380" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1397" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1433" optype="categorical" dataType="string">
+			<Value value="1"/>
+			<Value value="0"/>
+		</DataField>
+		<DataField name="F1434" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="F1453" optype="categorical" dataType="string">
+			<Value value="1"/>
+			<Value value="0"/>
+		</DataField>
+		<DataField name="F1481" optype="categorical" dataType="string">
+			<Value value="1"/>
+			<Value value="0"/>
+		</DataField>
+		<DataField name="height" optype="continuous" dataType="double"/>
+		<DataField name="width" optype="continuous" dataType="double"/>
+		<DataField name="aratio" optype="continuous" dataType="double"/>
+		<DataField name="class" optype="categorical" dataType="string">
+			<Value value="ad"/>
+			<Value value="nonad"/>
+		</DataField>
+	</DataDictionary>
+	<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+		<Extension extender="KGMOD" name="1SE alpha" value="0.003236"/>
+		<Extension extender="KGMOD" name="min alpha" value="0.000000"/>
+		<MiningSchema>
+			<MiningField name="F0001" missingValueTreatment="asMean"/>
+			<MiningField name="F0062" missingValueTreatment="asMean"/>
+			<MiningField name="F0185" missingValueTreatment="asMean"/>
+			<MiningField name="F0190" missingValueTreatment="asMean"/>
+			<MiningField name="F0272" missingValueTreatment="asMean"/>
+			<MiningField name="F0349" missingValueTreatment="asMean"/>
+			<MiningField name="F0418" missingValueTreatment="asMean"/>
+			<MiningField name="F0427" missingValueTreatment="asMean"/>
+			<MiningField name="F0453" missingValueTreatment="asMean"/>
+			<MiningField name="F0518" missingValueTreatment="asMean"/>
+			<MiningField name="F0546" missingValueTreatment="asMean"/>
+			<MiningField name="F0571" missingValueTreatment="asMean"/>
+			<MiningField name="F0600" missingValueTreatment="asMean"/>
+			<MiningField name="F0915" missingValueTreatment="asMean"/>
+			<MiningField name="F0936" missingValueTreatment="asMean"/>
+			<MiningField name="F0945" missingValueTreatment="asMean"/>
+			<MiningField name="F0966" missingValueTreatment="asMean"/>
+			<MiningField name="F0996" missingValueTreatment="asMean"/>
+			<MiningField name="F1134" missingValueTreatment="asMean"/>
+			<MiningField name="F1238" missingValueTreatment="asMean"/>
+			<MiningField name="F1241" missingValueTreatment="asMean"/>
+			<MiningField name="F1251" missingValueTreatment="asMean"/>
+			<MiningField name="F1276" missingValueTreatment="asMean"/>
+			<MiningField name="F1342" missingValueTreatment="asMean"/>
+			<MiningField name="F1349" missingValueTreatment="asMean"/>
+			<MiningField name="F1380" missingValueTreatment="asMean"/>
+			<MiningField name="F1397" missingValueTreatment="asMean"/>
+			<MiningField name="F1433" missingValueTreatment="asMean"/>
+			<MiningField name="F1434" missingValueTreatment="asMean"/>
+			<MiningField name="F1453" missingValueTreatment="asMean"/>
+			<MiningField name="F1481" missingValueTreatment="asMean"/>
+			<MiningField name="height" missingValueTreatment="asMean"/>
+			<MiningField name="width" missingValueTreatment="asMean"/>
+			<MiningField name="aratio" missingValueTreatment="asMean"/>
+			<MiningField name="class" usageType="predicted"/>
+		</MiningSchema>
+		<Node id="0" score="nonad" recordCount="3279" >
+			<Extension extender="KGMOD" name="complexity penalty" value="0.024348"/>
+			<True/>
+			<ScoreDistribution value="ad" recordCount="386"/>
+			<ScoreDistribution value="nonad" recordCount="1992"/>
+			<Node id="1" score="nonad" recordCount="2908.08" >
+				<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+				<SimplePredicate field="width" operator="lessOrEqual" value="390.5"/>
+				<ScoreDistribution value="ad" recordCount="234.742"/>
+				<ScoreDistribution value="nonad" recordCount="2673.34"/>
+				<Node id="2" score="ad" recordCount="111.588" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+					<SimpleSetPredicate field="F1241" booleanOperator="isIn">
+						<Array n="1" type="string">"1"</Array>
+					</SimpleSetPredicate>
+					<ScoreDistribution value="ad" recordCount="72"/>
+					<ScoreDistribution value="nonad" recordCount="5"/>
+				</Node>
+				<Node id="3" score="nonad" recordCount="2796.49" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.009449"/>
+					<SimpleSetPredicate field="F1241" booleanOperator="isNotIn">
+						<Array n="1" type="string">"1"</Array>
+					</SimpleSetPredicate>
+					<ScoreDistribution value="ad" recordCount="137.91"/>
+					<ScoreDistribution value="nonad" recordCount="2658.58"/>
+					<Node id="4" score="nonad" recordCount="2759.51" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.005110"/>
+						<SimpleSetPredicate field="F0349" booleanOperator="isIn">
+							<Array n="1" type="string">"0"</Array>
+						</SimpleSetPredicate>
+						<ScoreDistribution value="ad" recordCount="103.928"/>
+						<ScoreDistribution value="nonad" recordCount="2655.58"/>
+						<Node id="5" score="nonad" recordCount="2740.98" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000033"/>
+							<SimpleSetPredicate field="F1397" booleanOperator="isIn">
+								<Array n="1" type="string">"0"</Array>
+							</SimpleSetPredicate>
+							<ScoreDistribution value="ad" recordCount="86.2851"/>
+							<ScoreDistribution value="nonad" recordCount="2654.69"/>
+							<Node id="6" score="nonad" recordCount="36.5475" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<SimpleSetPredicate field="F1481" booleanOperator="isIn">
+									<Array n="1" type="string">"1"</Array>
+								</SimpleSetPredicate>
+								<ScoreDistribution value="ad" recordCount="11"/>
+								<ScoreDistribution value="nonad" recordCount="22"/>
+							</Node>
+							<Node id="7" score="nonad" recordCount="2704.43" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<SimpleSetPredicate field="F1481" booleanOperator="isNotIn">
+									<Array n="1" type="string">"1"</Array>
+								</SimpleSetPredicate>
+								<ScoreDistribution value="ad" recordCount="54"/>
+								<ScoreDistribution value="nonad" recordCount="1906.21"/>
+								<Node id="8" score="nonad" recordCount="900.765" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<SimplePredicate field="height" operator="lessOrEqual" value="29.5"/>
+									<ScoreDistribution value="ad" recordCount="4"/>
+									<ScoreDistribution value="nonad" recordCount="650.998"/>
+									<Node id="9" score="nonad" recordCount="865.927" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<SimplePredicate field="width" operator="lessOrEqual" value="179"/>
+										<ScoreDistribution value="ad" recordCount="2"/>
+										<ScoreDistribution value="nonad" recordCount="627.665"/>
+										<Node id="10" score="nonad" recordCount="2.75044" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<SimplePredicate field="width" operator="lessOrEqual" value="6"/>
+											<ScoreDistribution value="ad" recordCount="1"/>
+											<ScoreDistribution value="nonad" recordCount="1"/>
+										</Node>
+										<Node id="11" score="nonad" recordCount="863.176" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<SimplePredicate field="width" operator="greaterThan" value="6"/>
+											<ScoreDistribution value="ad" recordCount="1"/>
+											<ScoreDistribution value="nonad" recordCount="624"/>
+											<Node id="12" score="nonad" recordCount="157.443" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+												<SimplePredicate field="aratio" operator="lessOrEqual" value="29.5"/>
+												<ScoreDistribution value="ad" recordCount="1"/>
+												<ScoreDistribution value="nonad" recordCount="113"/>
+												<Node id="13" score="nonad" recordCount="156.062" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<SimplePredicate field="aratio" operator="lessOrEqual" value="25"/>
+													<ScoreDistribution value="ad" recordCount="0"/>
+													<ScoreDistribution value="nonad" recordCount="113.154"/>
+												</Node>
+												<Node id="14" score="ad" recordCount="1.38108" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<SimplePredicate field="aratio" operator="greaterThan" value="25"/>
+													<ScoreDistribution value="ad" recordCount="1"/>
+													<ScoreDistribution value="nonad" recordCount="0.00135979"/>
+												</Node>
+											</Node>
+											<Node id="15" score="nonad" recordCount="705.733" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+												<SimplePredicate field="aratio" operator="greaterThan" value="29.5"/>
+												<ScoreDistribution value="ad" recordCount="0"/>
+												<ScoreDistribution value="nonad" recordCount="511.695"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node id="16" score="nonad" recordCount="34.8385" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<SimplePredicate field="width" operator="greaterThan" value="179"/>
+										<ScoreDistribution value="ad" recordCount="2"/>
+										<ScoreDistribution value="nonad" recordCount="23.3331"/>
+									</Node>
+								</Node>
+								<Node id="17" score="nonad" recordCount="1803.67" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000020"/>
+									<SimplePredicate field="height" operator="greaterThan" value="29.5"/>
+									<ScoreDistribution value="ad" recordCount="50"/>
+									<ScoreDistribution value="nonad" recordCount="1252"/>
+									<Node id="18" score="nonad" recordCount="1767.65" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<SimplePredicate field="aratio" operator="lessOrEqual" value="64860.5"/>
+										<ScoreDistribution value="ad" recordCount="51.3325"/>
+										<ScoreDistribution value="nonad" recordCount="1716.32"/>
+										<Node id="19" score="nonad" recordCount="1659.5" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<SimpleSetPredicate field="F1276" booleanOperator="isIn">
+												<Array n="1" type="string">"0"</Array>
+											</SimpleSetPredicate>
+											<ScoreDistribution value="ad" recordCount="27"/>
+											<ScoreDistribution value="nonad" recordCount="1165.58"/>
+											<Node id="20" score="nonad" recordCount="207.765" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+												<SimplePredicate field="width" operator="lessOrEqual" value="53.5"/>
+												<ScoreDistribution value="ad" recordCount="0"/>
+												<ScoreDistribution value="nonad" recordCount="148.544"/>
+											</Node>
+											<Node id="21" score="nonad" recordCount="1451.74" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+												<SimplePredicate field="width" operator="greaterThan" value="53.5"/>
+												<ScoreDistribution value="ad" recordCount="35.1136"/>
+												<ScoreDistribution value="nonad" recordCount="1416.62"/>
+												<Node id="22" score="nonad" recordCount="1166.63" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<SimpleSetPredicate field="F0185" booleanOperator="isIn">
+														<Array n="1" type="string">"0"</Array>
+													</SimpleSetPredicate>
+													<ScoreDistribution value="ad" recordCount="13"/>
+													<ScoreDistribution value="nonad" recordCount="848.614"/>
+												</Node>
+												<Node id="23" score="nonad" recordCount="285.102" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<SimpleSetPredicate field="F0185" booleanOperator="isNotIn">
+														<Array n="1" type="string">"0"</Array>
+													</SimpleSetPredicate>
+													<ScoreDistribution value="ad" recordCount="14.5071"/>
+													<ScoreDistribution value="nonad" recordCount="269.595"/>
+													<Node id="24" score="nonad" recordCount="232.705" >
+														<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+														<SimpleSetPredicate field="F0001" booleanOperator="isIn">
+															<Array n="1" type="string">"1"</Array>
+														</SimpleSetPredicate>
+														<ScoreDistribution value="ad" recordCount="7"/>
+														<ScoreDistribution value="nonad" recordCount="137.47"/>
+														<Node id="25" score="ad" recordCount="1.61075" >
+															<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+															<SimplePredicate field="width" operator="lessOrEqual" value="54.5"/>
+															<ScoreDistribution value="ad" recordCount="1"/>
+															<ScoreDistribution value="nonad" recordCount="0"/>
+														</Node>
+														<Node id="26" score="nonad" recordCount="231.095" >
+															<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+															<SimplePredicate field="width" operator="greaterThan" value="54.5"/>
+															<ScoreDistribution value="ad" recordCount="6"/>
+															<ScoreDistribution value="nonad" recordCount="137.47"/>
+														</Node>
+													</Node>
+													<Node id="27" score="nonad" recordCount="52.3968" >
+														<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+														<SimpleSetPredicate field="F0001" booleanOperator="isNotIn">
+															<Array n="1" type="string">"1"</Array>
+														</SimpleSetPredicate>
+														<ScoreDistribution value="ad" recordCount="7"/>
+														<ScoreDistribution value="nonad" recordCount="30.1838"/>
+													</Node>
+												</Node>
+											</Node>
+										</Node>
+										<Node id="28" score="nonad" recordCount="108.146" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<SimpleSetPredicate field="F1276" booleanOperator="isNotIn">
+												<Array n="1" type="string">"0"</Array>
+											</SimpleSetPredicate>
+											<ScoreDistribution value="ad" recordCount="15.0577"/>
+											<ScoreDistribution value="nonad" recordCount="93.0886"/>
+										</Node>
+									</Node>
+									<Node id="29" score="nonad" recordCount="36.0179" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<SimplePredicate field="aratio" operator="greaterThan" value="64860.5"/>
+										<ScoreDistribution value="ad" recordCount="12.2717"/>
+										<ScoreDistribution value="nonad" recordCount="23.7462"/>
+									</Node>
+								</Node>
+							</Node>
+						</Node>
+						<Node id="30" score="ad" recordCount="18.5294" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<SimpleSetPredicate field="F1397" booleanOperator="isNotIn">
+								<Array n="1" type="string">"0"</Array>
+							</SimpleSetPredicate>
+							<ScoreDistribution value="ad" recordCount="7"/>
+							<ScoreDistribution value="nonad" recordCount="0"/>
+						</Node>
+					</Node>
+					<Node id="31" score="ad" recordCount="36.9819" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<SimpleSetPredicate field="F0349" booleanOperator="isNotIn">
+							<Array n="1" type="string">"0"</Array>
+						</SimpleSetPredicate>
+						<ScoreDistribution value="ad" recordCount="26"/>
+						<ScoreDistribution value="nonad" recordCount="3"/>
+					</Node>
+				</Node>
+			</Node>
+			<Node id="32" score="ad" recordCount="370.921" >
+				<Extension extender="KGMOD" name="complexity penalty" value="0.012611"/>
+				<SimplePredicate field="width" operator="greaterThan" value="390.5"/>
+				<ScoreDistribution value="ad" recordCount="216"/>
+				<ScoreDistribution value="nonad" recordCount="53"/>
+				<Node id="33" score="ad" recordCount="256.474" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.002049"/>
+					<SimplePredicate field="aratio" operator="lessOrEqual" value="79"/>
+					<ScoreDistribution value="ad" recordCount="182"/>
+					<ScoreDistribution value="nonad" recordCount="4.54752"/>
+					<Node id="34" score="ad" recordCount="253.079" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<SimplePredicate field="height" operator="lessOrEqual" value="80"/>
+						<ScoreDistribution value="ad" recordCount="186.634"/>
+						<ScoreDistribution value="nonad" recordCount="66.4443"/>
+						<Node id="35" score="ad" recordCount="84.0101" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<SimpleSetPredicate field="F1241" booleanOperator="isIn">
+								<Array n="1" type="string">"1"</Array>
+							</SimpleSetPredicate>
+							<ScoreDistribution value="ad" recordCount="82.1611"/>
+							<ScoreDistribution value="nonad" recordCount="1.849"/>
+						</Node>
+						<Node id="36" score="ad" recordCount="169.069" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<SimpleSetPredicate field="F1241" booleanOperator="isNotIn">
+								<Array n="1" type="string">"1"</Array>
+							</SimpleSetPredicate>
+							<ScoreDistribution value="ad" recordCount="104.473"/>
+							<ScoreDistribution value="nonad" recordCount="64.5953"/>
+							<Node id="37" score="ad" recordCount="133.374" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<SimpleSetPredicate field="F0349" booleanOperator="isIn">
+									<Array n="1" type="string">"0"</Array>
+								</SimpleSetPredicate>
+								<ScoreDistribution value="ad" recordCount="68.7785"/>
+								<ScoreDistribution value="nonad" recordCount="64.5953"/>
+								<Node id="38" score="nonad" recordCount="107.981" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<SimpleSetPredicate field="F1276" booleanOperator="isIn">
+										<Array n="1" type="string">"0"</Array>
+									</SimpleSetPredicate>
+									<ScoreDistribution value="ad" recordCount="45.2383"/>
+									<ScoreDistribution value="nonad" recordCount="62.743"/>
+									<Node id="39" score="nonad" recordCount="92.9779" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<SimpleSetPredicate field="F1397" booleanOperator="isIn">
+											<Array n="1" type="string">"0"</Array>
+										</SimpleSetPredicate>
+										<ScoreDistribution value="ad" recordCount="30.3121"/>
+										<ScoreDistribution value="nonad" recordCount="62.2799"/>
+									</Node>
+									<Node id="40" score="ad" recordCount="15.0034" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<SimpleSetPredicate field="F1397" booleanOperator="isNotIn">
+											<Array n="1" type="string">"0"</Array>
+										</SimpleSetPredicate>
+										<ScoreDistribution value="ad" recordCount="14"/>
+										<ScoreDistribution value="nonad" recordCount="0"/>
+									</Node>
+								</Node>
+								<Node id="41" score="ad" recordCount="25.3926" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<SimpleSetPredicate field="F1276" booleanOperator="isNotIn">
+										<Array n="1" type="string">"0"</Array>
+									</SimpleSetPredicate>
+									<ScoreDistribution value="ad" recordCount="23"/>
+									<ScoreDistribution value="nonad" recordCount="0"/>
+								</Node>
+							</Node>
+							<Node id="42" score="ad" recordCount="35.6946" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<SimpleSetPredicate field="F0349" booleanOperator="isNotIn">
+									<Array n="1" type="string">"0"</Array>
+								</SimpleSetPredicate>
+								<ScoreDistribution value="ad" recordCount="35"/>
+								<ScoreDistribution value="nonad" recordCount="0"/>
+							</Node>
+						</Node>
+					</Node>
+					<Node id="43" score="nonad" recordCount="3.3949" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<SimplePredicate field="height" operator="greaterThan" value="80"/>
+						<ScoreDistribution value="ad" recordCount="1"/>
+						<ScoreDistribution value="nonad" recordCount="1"/>
+					</Node>
+				</Node>
+				<Node id="44" score="nonad" recordCount="114.448" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+					<SimplePredicate field="aratio" operator="greaterThan" value="79"/>
+					<ScoreDistribution value="ad" recordCount="34"/>
+					<ScoreDistribution value="nonad" recordCount="49.2443"/>
+				</Node>
+			</Node>
+		</Node>
+	</TreeModel>
+</PMML>

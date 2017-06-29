@@ -1,0 +1,1580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.0">
+	<Header copyright="KGMOD">
+		<Application name="mclassify" version="1.0"/>
+		<Timestamp>2014/09/12 17:35:21</Timestamp>
+	</Header>
+	<DataDictionary numberOfFields="2">
+		<DataField name="BrandPattern" optype="categorical" dataType="string">
+			<Value value="C"/>
+			<Value value="A"/>
+			<Value value="F"/>
+			<Value value="B"/>
+			<Value value="G"/>
+			<Value value="D"/>
+			<Value value="E"/>
+		</DataField>
+		<DataField name="Class" optype="categorical" dataType="string">
+			<Value value="Loyal"/>
+			<Value value="NonLoyal"/>
+		</DataField>
+	</DataDictionary>
+	<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+		<Extension extender="KGMOD" name="1SE alpha" value="0.029495"/>
+		<Extension extender="KGMOD" name="min alpha" value="0.001014"/>
+		<MiningSchema>
+			<MiningField name="BrandPattern">
+				<Extension extender="KGMOD" name="alphabetIndex">
+					<alphabetIndex alphabet="C" index="2"/>
+					<alphabetIndex alphabet="A" index="1"/>
+					<alphabetIndex alphabet="F" index="2"/>
+					<alphabetIndex alphabet="B" index="2"/>
+					<alphabetIndex alphabet="G" index="2"/>
+					<alphabetIndex alphabet="D" index="2"/>
+					<alphabetIndex alphabet="E" index="2"/>
+				</Extension>
+				<Extension extender="KGMOD" name="indexSize" value="2"/>
+				<Extension extender="KGMOD" name="order" value="false"/>
+				<Extension extender="KGMOD" name="subsequence" value="false"/>
+				<Extension extender="KGMOD" name="indexLen" value="5"/>
+			</MiningField>
+			<MiningField name="Class" usageType="predicted"/>
+		</MiningSchema>
+		<Node id="0" score="Loyal" recordCount="1654" >
+			<Extension extender="KGMOD" name="complexity penalty" value="0.359734"/>
+			<True/>
+			<ScoreDistribution value="Loyal" recordCount="827"/>
+			<ScoreDistribution value="NonLoyal" recordCount="827"/>
+			<Node id="1" score="Loyal" recordCount="791" >
+				<Extension extender="KGMOD" name="complexity penalty" value="0.001360"/>
+				<Extension extender="KGMOD" name="patternPredicate" value="substring">
+					<SimplePredicate field="BrandPattern" operator="contain">
+						<index seqNo="1" value="1"/>
+						<index seqNo="2" value="1"/>
+					</SimplePredicate>
+				</Extension>
+				<ScoreDistribution value="Loyal" recordCount="693"/>
+				<ScoreDistribution value="NonLoyal" recordCount="98"/>
+				<Node id="2" score="Loyal" recordCount="602" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.000756"/>
+					<Extension extender="KGMOD" name="patternPredicate" value="substring">
+						<SimplePredicate field="BrandPattern" operator="contain">
+							<index seqNo="1" value="1"/>
+							<index seqNo="2" value="1"/>
+							<index seqNo="3" value="1"/>
+							<index seqNo="4" value="1"/>
+						</SimplePredicate>
+					</Extension>
+					<ScoreDistribution value="Loyal" recordCount="567"/>
+					<ScoreDistribution value="NonLoyal" recordCount="35"/>
+					<Node id="3" score="Loyal" recordCount="84" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<Extension extender="KGMOD" name="patternPredicate" value="substring">
+							<SimplePredicate field="BrandPattern" operator="contain">
+								<index seqNo="1" value="1"/>
+								<index seqNo="2" value="1"/>
+								<index seqNo="3" value="1"/>
+								<index seqNo="4" value="1"/>
+								<index seqNo="5" value="2"/>
+							</SimplePredicate>
+						</Extension>
+						<ScoreDistribution value="Loyal" recordCount="69"/>
+						<ScoreDistribution value="NonLoyal" recordCount="15"/>
+						<Node id="4" score="Loyal" recordCount="27" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="BrandPattern" operator="contain">
+									<index seqNo="1" value="2"/>
+									<index seqNo="2" value="2"/>
+									<index seqNo="3" value="2"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="Loyal" recordCount="17"/>
+							<ScoreDistribution value="NonLoyal" recordCount="10"/>
+							<Node id="5" score="Loyal" recordCount="11" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="contain">
+										<index seqNo="1" value="2"/>
+										<index seqNo="2" value="2"/>
+										<index seqNo="3" value="2"/>
+										<index seqNo="4" value="2"/>
+										<index seqNo="5" value="1"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="10"/>
+								<ScoreDistribution value="NonLoyal" recordCount="1"/>
+							</Node>
+							<Node id="6" score="NonLoyal" recordCount="16" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="notcontain">
+										<index seqNo="1" value="2"/>
+										<index seqNo="2" value="2"/>
+										<index seqNo="3" value="2"/>
+										<index seqNo="4" value="2"/>
+										<index seqNo="5" value="1"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="7"/>
+								<ScoreDistribution value="NonLoyal" recordCount="9"/>
+								<Node id="7" score="Loyal" recordCount="3" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="contain">
+											<index seqNo="1" value="1"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="1"/>
+											<index seqNo="4" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="3"/>
+									<ScoreDistribution value="NonLoyal" recordCount="0"/>
+								</Node>
+								<Node id="8" score="NonLoyal" recordCount="13" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000605"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="notcontain">
+											<index seqNo="1" value="1"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="1"/>
+											<index seqNo="4" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="4"/>
+									<ScoreDistribution value="NonLoyal" recordCount="9"/>
+									<Node id="9" score="NonLoyal" recordCount="9" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="contain">
+												<index seqNo="1" value="1"/>
+												<index seqNo="2" value="1"/>
+												<index seqNo="3" value="1"/>
+												<index seqNo="4" value="1"/>
+												<index seqNo="5" value="1"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="4"/>
+										<ScoreDistribution value="NonLoyal" recordCount="5"/>
+										<Node id="10" score="NonLoyal" recordCount="5" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000605"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="contain">
+													<index seqNo="1" value="2"/>
+													<index seqNo="2" value="1"/>
+													<index seqNo="3" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="1"/>
+											<ScoreDistribution value="NonLoyal" recordCount="4"/>
+											<Node id="11" score="Loyal" recordCount="1" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+												<Extension extender="KGMOD" name="patternPredicate" value="substring">
+													<SimplePredicate field="BrandPattern" operator="contain">
+														<index seqNo="1" value="1"/>
+														<index seqNo="2" value="2"/>
+														<index seqNo="3" value="1"/>
+													</SimplePredicate>
+												</Extension>
+												<ScoreDistribution value="Loyal" recordCount="1"/>
+												<ScoreDistribution value="NonLoyal" recordCount="0"/>
+											</Node>
+											<Node id="12" score="NonLoyal" recordCount="4" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+												<Extension extender="KGMOD" name="patternPredicate" value="substring">
+													<SimplePredicate field="BrandPattern" operator="notcontain">
+														<index seqNo="1" value="1"/>
+														<index seqNo="2" value="2"/>
+														<index seqNo="3" value="1"/>
+													</SimplePredicate>
+												</Extension>
+												<ScoreDistribution value="Loyal" recordCount="0"/>
+												<ScoreDistribution value="NonLoyal" recordCount="4"/>
+											</Node>
+										</Node>
+										<Node id="13" score="Loyal" recordCount="4" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="notcontain">
+													<index seqNo="1" value="2"/>
+													<index seqNo="2" value="1"/>
+													<index seqNo="3" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="3"/>
+											<ScoreDistribution value="NonLoyal" recordCount="1"/>
+										</Node>
+									</Node>
+									<Node id="14" score="NonLoyal" recordCount="4" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="notcontain">
+												<index seqNo="1" value="1"/>
+												<index seqNo="2" value="1"/>
+												<index seqNo="3" value="1"/>
+												<index seqNo="4" value="1"/>
+												<index seqNo="5" value="1"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="0"/>
+										<ScoreDistribution value="NonLoyal" recordCount="4"/>
+									</Node>
+								</Node>
+							</Node>
+						</Node>
+						<Node id="15" score="Loyal" recordCount="57" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000202"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="BrandPattern" operator="notcontain">
+									<index seqNo="1" value="2"/>
+									<index seqNo="2" value="2"/>
+									<index seqNo="3" value="2"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="Loyal" recordCount="52"/>
+							<ScoreDistribution value="NonLoyal" recordCount="5"/>
+							<Node id="16" score="Loyal" recordCount="37" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="contain">
+										<index seqNo="1" value="1"/>
+										<index seqNo="2" value="1"/>
+										<index seqNo="3" value="1"/>
+										<index seqNo="4" value="1"/>
+										<index seqNo="5" value="1"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="36"/>
+								<ScoreDistribution value="NonLoyal" recordCount="1"/>
+								<Node id="17" score="Loyal" recordCount="13" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="contain">
+											<index seqNo="1" value="1"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="1"/>
+											<index seqNo="4" value="1"/>
+											<index seqNo="5" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="12"/>
+									<ScoreDistribution value="NonLoyal" recordCount="1"/>
+									<Node id="18" score="Loyal" recordCount="12" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="contain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="1"/>
+												<index seqNo="3" value="1"/>
+												<index seqNo="4" value="1"/>
+												<index seqNo="5" value="1"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="12"/>
+										<ScoreDistribution value="NonLoyal" recordCount="0"/>
+									</Node>
+									<Node id="19" score="NonLoyal" recordCount="1" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="notcontain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="1"/>
+												<index seqNo="3" value="1"/>
+												<index seqNo="4" value="1"/>
+												<index seqNo="5" value="1"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="0"/>
+										<ScoreDistribution value="NonLoyal" recordCount="1"/>
+									</Node>
+								</Node>
+								<Node id="20" score="Loyal" recordCount="24" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="notcontain">
+											<index seqNo="1" value="1"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="1"/>
+											<index seqNo="4" value="1"/>
+											<index seqNo="5" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="24"/>
+									<ScoreDistribution value="NonLoyal" recordCount="0"/>
+								</Node>
+							</Node>
+							<Node id="21" score="Loyal" recordCount="20" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000202"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="notcontain">
+										<index seqNo="1" value="1"/>
+										<index seqNo="2" value="1"/>
+										<index seqNo="3" value="1"/>
+										<index seqNo="4" value="1"/>
+										<index seqNo="5" value="1"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="16"/>
+								<ScoreDistribution value="NonLoyal" recordCount="4"/>
+								<Node id="22" score="Loyal" recordCount="6" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="contain">
+											<index seqNo="1" value="1"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="6"/>
+									<ScoreDistribution value="NonLoyal" recordCount="0"/>
+								</Node>
+								<Node id="23" score="Loyal" recordCount="14" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="notcontain">
+											<index seqNo="1" value="1"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="10"/>
+									<ScoreDistribution value="NonLoyal" recordCount="4"/>
+									<Node id="24" score="Loyal" recordCount="4" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="contain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="2"/>
+										<ScoreDistribution value="NonLoyal" recordCount="2"/>
+										<Node id="25" score="Loyal" recordCount="1" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="contain">
+													<index seqNo="1" value="2"/>
+													<index seqNo="2" value="1"/>
+													<index seqNo="3" value="1"/>
+													<index seqNo="4" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="1"/>
+											<ScoreDistribution value="NonLoyal" recordCount="0"/>
+										</Node>
+										<Node id="26" score="NonLoyal" recordCount="3" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="notcontain">
+													<index seqNo="1" value="2"/>
+													<index seqNo="2" value="1"/>
+													<index seqNo="3" value="1"/>
+													<index seqNo="4" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="1"/>
+											<ScoreDistribution value="NonLoyal" recordCount="2"/>
+										</Node>
+									</Node>
+									<Node id="27" score="Loyal" recordCount="10" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="notcontain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="8"/>
+										<ScoreDistribution value="NonLoyal" recordCount="2"/>
+									</Node>
+								</Node>
+							</Node>
+						</Node>
+					</Node>
+					<Node id="28" score="Loyal" recordCount="518" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000202"/>
+						<Extension extender="KGMOD" name="patternPredicate" value="substring">
+							<SimplePredicate field="BrandPattern" operator="notcontain">
+								<index seqNo="1" value="1"/>
+								<index seqNo="2" value="1"/>
+								<index seqNo="3" value="1"/>
+								<index seqNo="4" value="1"/>
+								<index seqNo="5" value="2"/>
+							</SimplePredicate>
+						</Extension>
+						<ScoreDistribution value="Loyal" recordCount="498"/>
+						<ScoreDistribution value="NonLoyal" recordCount="20"/>
+						<Node id="29" score="Loyal" recordCount="387" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="BrandPattern" operator="contain">
+									<index seqNo="1" value="1"/>
+									<index seqNo="2" value="1"/>
+									<index seqNo="3" value="1"/>
+									<index seqNo="4" value="1"/>
+									<index seqNo="5" value="1"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="Loyal" recordCount="376"/>
+							<ScoreDistribution value="NonLoyal" recordCount="11"/>
+						</Node>
+						<Node id="30" score="Loyal" recordCount="131" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="BrandPattern" operator="notcontain">
+									<index seqNo="1" value="1"/>
+									<index seqNo="2" value="1"/>
+									<index seqNo="3" value="1"/>
+									<index seqNo="4" value="1"/>
+									<index seqNo="5" value="1"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="Loyal" recordCount="122"/>
+							<ScoreDistribution value="NonLoyal" recordCount="9"/>
+							<Node id="31" score="Loyal" recordCount="3" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="contain">
+										<index seqNo="1" value="1"/>
+										<index seqNo="2" value="1"/>
+										<index seqNo="3" value="2"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="2"/>
+								<ScoreDistribution value="NonLoyal" recordCount="1"/>
+								<Node id="32" score="NonLoyal" recordCount="1" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="contain">
+											<index seqNo="1" value="2"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="2"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="0"/>
+									<ScoreDistribution value="NonLoyal" recordCount="1"/>
+								</Node>
+								<Node id="33" score="Loyal" recordCount="2" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="notcontain">
+											<index seqNo="1" value="2"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="2"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="2"/>
+									<ScoreDistribution value="NonLoyal" recordCount="0"/>
+								</Node>
+							</Node>
+							<Node id="34" score="Loyal" recordCount="128" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="notcontain">
+										<index seqNo="1" value="1"/>
+										<index seqNo="2" value="1"/>
+										<index seqNo="3" value="2"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="120"/>
+								<ScoreDistribution value="NonLoyal" recordCount="8"/>
+							</Node>
+						</Node>
+					</Node>
+				</Node>
+				<Node id="35" score="Loyal" recordCount="189" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+					<Extension extender="KGMOD" name="patternPredicate" value="substring">
+						<SimplePredicate field="BrandPattern" operator="notcontain">
+							<index seqNo="1" value="1"/>
+							<index seqNo="2" value="1"/>
+							<index seqNo="3" value="1"/>
+							<index seqNo="4" value="1"/>
+						</SimplePredicate>
+					</Extension>
+					<ScoreDistribution value="Loyal" recordCount="126"/>
+					<ScoreDistribution value="NonLoyal" recordCount="63"/>
+					<Node id="36" score="Loyal" recordCount="117" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<Extension extender="KGMOD" name="patternPredicate" value="substring">
+							<SimplePredicate field="BrandPattern" operator="contain">
+								<index seqNo="1" value="1"/>
+								<index seqNo="2" value="1"/>
+								<index seqNo="3" value="2"/>
+							</SimplePredicate>
+						</Extension>
+						<ScoreDistribution value="Loyal" recordCount="69"/>
+						<ScoreDistribution value="NonLoyal" recordCount="48"/>
+						<Node id="37" score="Loyal" recordCount="50" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000605"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="BrandPattern" operator="contain">
+									<index seqNo="1" value="1"/>
+									<index seqNo="2" value="1"/>
+									<index seqNo="3" value="1"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="Loyal" recordCount="36"/>
+							<ScoreDistribution value="NonLoyal" recordCount="14"/>
+							<Node id="38" score="Loyal" recordCount="44" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="contain">
+										<index seqNo="1" value="1"/>
+										<index seqNo="2" value="1"/>
+										<index seqNo="3" value="1"/>
+										<index seqNo="4" value="2"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="30"/>
+								<ScoreDistribution value="NonLoyal" recordCount="14"/>
+								<Node id="39" score="Loyal" recordCount="16" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="contain">
+											<index seqNo="1" value="2"/>
+											<index seqNo="2" value="1"/>
+											<index seqNo="3" value="1"/>
+											<index seqNo="4" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="8"/>
+									<ScoreDistribution value="NonLoyal" recordCount="8"/>
+									<Node id="40" score="Loyal" recordCount="3" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="contain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="2"/>
+												<index seqNo="4" value="2"/>
+												<index seqNo="5" value="1"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="3"/>
+										<ScoreDistribution value="NonLoyal" recordCount="0"/>
+									</Node>
+									<Node id="41" score="NonLoyal" recordCount="13" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000605"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="notcontain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="2"/>
+												<index seqNo="4" value="2"/>
+												<index seqNo="5" value="1"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="5"/>
+										<ScoreDistribution value="NonLoyal" recordCount="8"/>
+										<Node id="42" score="NonLoyal" recordCount="2" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="contain">
+													<index seqNo="1" value="1"/>
+													<index seqNo="2" value="1"/>
+													<index seqNo="3" value="2"/>
+													<index seqNo="4" value="1"/>
+													<index seqNo="5" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="0"/>
+											<ScoreDistribution value="NonLoyal" recordCount="2"/>
+										</Node>
+										<Node id="43" score="NonLoyal" recordCount="11" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="notcontain">
+													<index seqNo="1" value="1"/>
+													<index seqNo="2" value="1"/>
+													<index seqNo="3" value="2"/>
+													<index seqNo="4" value="1"/>
+													<index seqNo="5" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="5"/>
+											<ScoreDistribution value="NonLoyal" recordCount="6"/>
+											<Node id="44" score="Loyal" recordCount="4" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+												<Extension extender="KGMOD" name="patternPredicate" value="substring">
+													<SimplePredicate field="BrandPattern" operator="contain">
+														<index seqNo="1" value="1"/>
+														<index seqNo="2" value="2"/>
+														<index seqNo="3" value="1"/>
+													</SimplePredicate>
+												</Extension>
+												<ScoreDistribution value="Loyal" recordCount="3"/>
+												<ScoreDistribution value="NonLoyal" recordCount="1"/>
+											</Node>
+											<Node id="45" score="NonLoyal" recordCount="7" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000302"/>
+												<Extension extender="KGMOD" name="patternPredicate" value="substring">
+													<SimplePredicate field="BrandPattern" operator="notcontain">
+														<index seqNo="1" value="1"/>
+														<index seqNo="2" value="2"/>
+														<index seqNo="3" value="1"/>
+													</SimplePredicate>
+												</Extension>
+												<ScoreDistribution value="Loyal" recordCount="2"/>
+												<ScoreDistribution value="NonLoyal" recordCount="5"/>
+												<Node id="46" score="Loyal" recordCount="4" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<Extension extender="KGMOD" name="patternPredicate" value="substring">
+														<SimplePredicate field="BrandPattern" operator="contain">
+															<index seqNo="1" value="2"/>
+															<index seqNo="2" value="2"/>
+															<index seqNo="3" value="2"/>
+														</SimplePredicate>
+													</Extension>
+													<ScoreDistribution value="Loyal" recordCount="2"/>
+													<ScoreDistribution value="NonLoyal" recordCount="2"/>
+													<Node id="47" score="NonLoyal" recordCount="3" >
+														<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+														<Extension extender="KGMOD" name="patternPredicate" value="substring">
+															<SimplePredicate field="BrandPattern" operator="contain">
+																<index seqNo="1" value="2"/>
+																<index seqNo="2" value="2"/>
+																<index seqNo="3" value="1"/>
+																<index seqNo="4" value="1"/>
+															</SimplePredicate>
+														</Extension>
+														<ScoreDistribution value="Loyal" recordCount="1"/>
+														<ScoreDistribution value="NonLoyal" recordCount="2"/>
+													</Node>
+													<Node id="48" score="Loyal" recordCount="1" >
+														<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+														<Extension extender="KGMOD" name="patternPredicate" value="substring">
+															<SimplePredicate field="BrandPattern" operator="notcontain">
+																<index seqNo="1" value="2"/>
+																<index seqNo="2" value="2"/>
+																<index seqNo="3" value="1"/>
+																<index seqNo="4" value="1"/>
+															</SimplePredicate>
+														</Extension>
+														<ScoreDistribution value="Loyal" recordCount="1"/>
+														<ScoreDistribution value="NonLoyal" recordCount="0"/>
+													</Node>
+												</Node>
+												<Node id="49" score="NonLoyal" recordCount="3" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<Extension extender="KGMOD" name="patternPredicate" value="substring">
+														<SimplePredicate field="BrandPattern" operator="notcontain">
+															<index seqNo="1" value="2"/>
+															<index seqNo="2" value="2"/>
+															<index seqNo="3" value="2"/>
+														</SimplePredicate>
+													</Extension>
+													<ScoreDistribution value="Loyal" recordCount="0"/>
+													<ScoreDistribution value="NonLoyal" recordCount="3"/>
+												</Node>
+											</Node>
+										</Node>
+									</Node>
+								</Node>
+								<Node id="50" score="Loyal" recordCount="28" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="notcontain">
+											<index seqNo="1" value="2"/>
+											<index seqNo="2" value="1"/>
+											<index seqNo="3" value="1"/>
+											<index seqNo="4" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="22"/>
+									<ScoreDistribution value="NonLoyal" recordCount="6"/>
+								</Node>
+							</Node>
+							<Node id="51" score="Loyal" recordCount="6" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="notcontain">
+										<index seqNo="1" value="1"/>
+										<index seqNo="2" value="1"/>
+										<index seqNo="3" value="1"/>
+										<index seqNo="4" value="2"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="6"/>
+								<ScoreDistribution value="NonLoyal" recordCount="0"/>
+							</Node>
+						</Node>
+						<Node id="52" score="NonLoyal" recordCount="67" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="BrandPattern" operator="notcontain">
+									<index seqNo="1" value="1"/>
+									<index seqNo="2" value="1"/>
+									<index seqNo="3" value="1"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="Loyal" recordCount="33"/>
+							<ScoreDistribution value="NonLoyal" recordCount="34"/>
+							<Node id="53" score="NonLoyal" recordCount="23" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000403"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="contain">
+										<index seqNo="1" value="2"/>
+										<index seqNo="2" value="2"/>
+										<index seqNo="3" value="2"/>
+										<index seqNo="4" value="2"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="7"/>
+								<ScoreDistribution value="NonLoyal" recordCount="16"/>
+								<Node id="54" score="Loyal" recordCount="10" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="contain">
+											<index seqNo="1" value="2"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="2"/>
+											<index seqNo="4" value="2"/>
+											<index seqNo="5" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="5"/>
+									<ScoreDistribution value="NonLoyal" recordCount="5"/>
+									<Node id="55" score="NonLoyal" recordCount="9" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="contain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="2"/>
+												<index seqNo="4" value="2"/>
+												<index seqNo="5" value="2"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="4"/>
+										<ScoreDistribution value="NonLoyal" recordCount="5"/>
+										<Node id="56" score="NonLoyal" recordCount="2" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="contain">
+													<index seqNo="1" value="1"/>
+													<index seqNo="2" value="2"/>
+													<index seqNo="3" value="1"/>
+													<index seqNo="4" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="0"/>
+											<ScoreDistribution value="NonLoyal" recordCount="2"/>
+										</Node>
+										<Node id="57" score="Loyal" recordCount="7" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000403"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="notcontain">
+													<index seqNo="1" value="1"/>
+													<index seqNo="2" value="2"/>
+													<index seqNo="3" value="1"/>
+													<index seqNo="4" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="4"/>
+											<ScoreDistribution value="NonLoyal" recordCount="3"/>
+											<Node id="58" score="Loyal" recordCount="4" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+												<Extension extender="KGMOD" name="patternPredicate" value="substring">
+													<SimplePredicate field="BrandPattern" operator="contain">
+														<index seqNo="1" value="2"/>
+														<index seqNo="2" value="2"/>
+														<index seqNo="3" value="1"/>
+														<index seqNo="4" value="1"/>
+													</SimplePredicate>
+												</Extension>
+												<ScoreDistribution value="Loyal" recordCount="2"/>
+												<ScoreDistribution value="NonLoyal" recordCount="2"/>
+												<Node id="59" score="Loyal" recordCount="3" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<Extension extender="KGMOD" name="patternPredicate" value="substring">
+														<SimplePredicate field="BrandPattern" operator="contain">
+															<index seqNo="1" value="1"/>
+															<index seqNo="2" value="2"/>
+															<index seqNo="3" value="1"/>
+														</SimplePredicate>
+													</Extension>
+													<ScoreDistribution value="Loyal" recordCount="2"/>
+													<ScoreDistribution value="NonLoyal" recordCount="1"/>
+												</Node>
+												<Node id="60" score="NonLoyal" recordCount="1" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<Extension extender="KGMOD" name="patternPredicate" value="substring">
+														<SimplePredicate field="BrandPattern" operator="notcontain">
+															<index seqNo="1" value="1"/>
+															<index seqNo="2" value="2"/>
+															<index seqNo="3" value="1"/>
+														</SimplePredicate>
+													</Extension>
+													<ScoreDistribution value="Loyal" recordCount="0"/>
+													<ScoreDistribution value="NonLoyal" recordCount="1"/>
+												</Node>
+											</Node>
+											<Node id="61" score="Loyal" recordCount="3" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+												<Extension extender="KGMOD" name="patternPredicate" value="substring">
+													<SimplePredicate field="BrandPattern" operator="notcontain">
+														<index seqNo="1" value="2"/>
+														<index seqNo="2" value="2"/>
+														<index seqNo="3" value="1"/>
+														<index seqNo="4" value="1"/>
+													</SimplePredicate>
+												</Extension>
+												<ScoreDistribution value="Loyal" recordCount="2"/>
+												<ScoreDistribution value="NonLoyal" recordCount="1"/>
+												<Node id="62" score="NonLoyal" recordCount="1" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<Extension extender="KGMOD" name="patternPredicate" value="substring">
+														<SimplePredicate field="BrandPattern" operator="contain">
+															<index seqNo="1" value="1"/>
+															<index seqNo="2" value="2"/>
+															<index seqNo="3" value="1"/>
+														</SimplePredicate>
+													</Extension>
+													<ScoreDistribution value="Loyal" recordCount="0"/>
+													<ScoreDistribution value="NonLoyal" recordCount="1"/>
+												</Node>
+												<Node id="63" score="Loyal" recordCount="2" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<Extension extender="KGMOD" name="patternPredicate" value="substring">
+														<SimplePredicate field="BrandPattern" operator="notcontain">
+															<index seqNo="1" value="1"/>
+															<index seqNo="2" value="2"/>
+															<index seqNo="3" value="1"/>
+														</SimplePredicate>
+													</Extension>
+													<ScoreDistribution value="Loyal" recordCount="2"/>
+													<ScoreDistribution value="NonLoyal" recordCount="0"/>
+												</Node>
+											</Node>
+										</Node>
+									</Node>
+									<Node id="64" score="Loyal" recordCount="1" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="notcontain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="2"/>
+												<index seqNo="4" value="2"/>
+												<index seqNo="5" value="2"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="1"/>
+										<ScoreDistribution value="NonLoyal" recordCount="0"/>
+									</Node>
+								</Node>
+								<Node id="65" score="NonLoyal" recordCount="13" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="notcontain">
+											<index seqNo="1" value="2"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="2"/>
+											<index seqNo="4" value="2"/>
+											<index seqNo="5" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="2"/>
+									<ScoreDistribution value="NonLoyal" recordCount="11"/>
+								</Node>
+							</Node>
+							<Node id="66" score="Loyal" recordCount="44" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000363"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="notcontain">
+										<index seqNo="1" value="2"/>
+										<index seqNo="2" value="2"/>
+										<index seqNo="3" value="2"/>
+										<index seqNo="4" value="2"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="26"/>
+								<ScoreDistribution value="NonLoyal" recordCount="18"/>
+								<Node id="67" score="Loyal" recordCount="3" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="contain">
+											<index seqNo="1" value="1"/>
+											<index seqNo="2" value="1"/>
+											<index seqNo="3" value="2"/>
+											<index seqNo="4" value="1"/>
+											<index seqNo="5" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="3"/>
+									<ScoreDistribution value="NonLoyal" recordCount="0"/>
+								</Node>
+								<Node id="68" score="Loyal" recordCount="41" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="notcontain">
+											<index seqNo="1" value="1"/>
+											<index seqNo="2" value="1"/>
+											<index seqNo="3" value="2"/>
+											<index seqNo="4" value="1"/>
+											<index seqNo="5" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="23"/>
+									<ScoreDistribution value="NonLoyal" recordCount="18"/>
+									<Node id="69" score="Loyal" recordCount="6" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="contain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="1"/>
+												<index seqNo="4" value="1"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="5"/>
+										<ScoreDistribution value="NonLoyal" recordCount="1"/>
+									</Node>
+									<Node id="70" score="Loyal" recordCount="35" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="notcontain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="1"/>
+												<index seqNo="4" value="1"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="18"/>
+										<ScoreDistribution value="NonLoyal" recordCount="17"/>
+										<Node id="71" score="Loyal" recordCount="6" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="contain">
+													<index seqNo="1" value="1"/>
+													<index seqNo="2" value="2"/>
+													<index seqNo="3" value="1"/>
+													<index seqNo="4" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="4"/>
+											<ScoreDistribution value="NonLoyal" recordCount="2"/>
+											<Node id="72" score="NonLoyal" recordCount="1" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+												<Extension extender="KGMOD" name="patternPredicate" value="substring">
+													<SimplePredicate field="BrandPattern" operator="contain">
+														<index seqNo="1" value="2"/>
+														<index seqNo="2" value="2"/>
+														<index seqNo="3" value="2"/>
+													</SimplePredicate>
+												</Extension>
+												<ScoreDistribution value="Loyal" recordCount="0"/>
+												<ScoreDistribution value="NonLoyal" recordCount="1"/>
+											</Node>
+											<Node id="73" score="Loyal" recordCount="5" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000302"/>
+												<Extension extender="KGMOD" name="patternPredicate" value="substring">
+													<SimplePredicate field="BrandPattern" operator="notcontain">
+														<index seqNo="1" value="2"/>
+														<index seqNo="2" value="2"/>
+														<index seqNo="3" value="2"/>
+													</SimplePredicate>
+												</Extension>
+												<ScoreDistribution value="Loyal" recordCount="4"/>
+												<ScoreDistribution value="NonLoyal" recordCount="1"/>
+												<Node id="74" score="Loyal" recordCount="3" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<Extension extender="KGMOD" name="patternPredicate" value="substring">
+														<SimplePredicate field="BrandPattern" operator="contain">
+															<index seqNo="1" value="2"/>
+															<index seqNo="2" value="2"/>
+														</SimplePredicate>
+													</Extension>
+													<ScoreDistribution value="Loyal" recordCount="2"/>
+													<ScoreDistribution value="NonLoyal" recordCount="1"/>
+													<Node id="75" score="Loyal" recordCount="2" >
+														<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+														<Extension extender="KGMOD" name="patternPredicate" value="substring">
+															<SimplePredicate field="BrandPattern" operator="contain">
+																<index seqNo="1" value="2"/>
+																<index seqNo="2" value="2"/>
+																<index seqNo="3" value="1"/>
+															</SimplePredicate>
+														</Extension>
+														<ScoreDistribution value="Loyal" recordCount="2"/>
+														<ScoreDistribution value="NonLoyal" recordCount="0"/>
+													</Node>
+													<Node id="76" score="NonLoyal" recordCount="1" >
+														<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+														<Extension extender="KGMOD" name="patternPredicate" value="substring">
+															<SimplePredicate field="BrandPattern" operator="notcontain">
+																<index seqNo="1" value="2"/>
+																<index seqNo="2" value="2"/>
+																<index seqNo="3" value="1"/>
+															</SimplePredicate>
+														</Extension>
+														<ScoreDistribution value="Loyal" recordCount="0"/>
+														<ScoreDistribution value="NonLoyal" recordCount="1"/>
+													</Node>
+												</Node>
+												<Node id="77" score="Loyal" recordCount="2" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<Extension extender="KGMOD" name="patternPredicate" value="substring">
+														<SimplePredicate field="BrandPattern" operator="notcontain">
+															<index seqNo="1" value="2"/>
+															<index seqNo="2" value="2"/>
+														</SimplePredicate>
+													</Extension>
+													<ScoreDistribution value="Loyal" recordCount="2"/>
+													<ScoreDistribution value="NonLoyal" recordCount="0"/>
+												</Node>
+											</Node>
+										</Node>
+										<Node id="78" score="NonLoyal" recordCount="29" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="notcontain">
+													<index seqNo="1" value="1"/>
+													<index seqNo="2" value="2"/>
+													<index seqNo="3" value="1"/>
+													<index seqNo="4" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="14"/>
+											<ScoreDistribution value="NonLoyal" recordCount="15"/>
+											<Node id="79" score="Loyal" recordCount="1" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+												<Extension extender="KGMOD" name="patternPredicate" value="substring">
+													<SimplePredicate field="BrandPattern" operator="contain">
+														<index seqNo="1" value="2"/>
+														<index seqNo="2" value="2"/>
+														<index seqNo="3" value="2"/>
+														<index seqNo="4" value="1"/>
+													</SimplePredicate>
+												</Extension>
+												<ScoreDistribution value="Loyal" recordCount="1"/>
+												<ScoreDistribution value="NonLoyal" recordCount="0"/>
+											</Node>
+											<Node id="80" score="NonLoyal" recordCount="28" >
+												<Extension extender="KGMOD" name="complexity penalty" value="0.000302"/>
+												<Extension extender="KGMOD" name="patternPredicate" value="substring">
+													<SimplePredicate field="BrandPattern" operator="notcontain">
+														<index seqNo="1" value="2"/>
+														<index seqNo="2" value="2"/>
+														<index seqNo="3" value="2"/>
+														<index seqNo="4" value="1"/>
+													</SimplePredicate>
+												</Extension>
+												<ScoreDistribution value="Loyal" recordCount="13"/>
+												<ScoreDistribution value="NonLoyal" recordCount="15"/>
+												<Node id="81" score="NonLoyal" recordCount="10" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000302"/>
+													<Extension extender="KGMOD" name="patternPredicate" value="substring">
+														<SimplePredicate field="BrandPattern" operator="contain">
+															<index seqNo="1" value="2"/>
+															<index seqNo="2" value="1"/>
+															<index seqNo="3" value="1"/>
+														</SimplePredicate>
+													</Extension>
+													<ScoreDistribution value="Loyal" recordCount="4"/>
+													<ScoreDistribution value="NonLoyal" recordCount="6"/>
+													<Node id="82" score="NonLoyal" recordCount="2" >
+														<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+														<Extension extender="KGMOD" name="patternPredicate" value="substring">
+															<SimplePredicate field="BrandPattern" operator="contain">
+																<index seqNo="1" value="2"/>
+																<index seqNo="2" value="2"/>
+																<index seqNo="3" value="2"/>
+															</SimplePredicate>
+														</Extension>
+														<ScoreDistribution value="Loyal" recordCount="0"/>
+														<ScoreDistribution value="NonLoyal" recordCount="2"/>
+													</Node>
+													<Node id="83" score="Loyal" recordCount="8" >
+														<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+														<Extension extender="KGMOD" name="patternPredicate" value="substring">
+															<SimplePredicate field="BrandPattern" operator="notcontain">
+																<index seqNo="1" value="2"/>
+																<index seqNo="2" value="2"/>
+																<index seqNo="3" value="2"/>
+															</SimplePredicate>
+														</Extension>
+														<ScoreDistribution value="Loyal" recordCount="4"/>
+														<ScoreDistribution value="NonLoyal" recordCount="4"/>
+														<Node id="84" score="Loyal" recordCount="5" >
+															<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+															<Extension extender="KGMOD" name="patternPredicate" value="substring">
+																<SimplePredicate field="BrandPattern" operator="contain">
+																	<index seqNo="1" value="2"/>
+																	<index seqNo="2" value="2"/>
+																</SimplePredicate>
+															</Extension>
+															<ScoreDistribution value="Loyal" recordCount="3"/>
+															<ScoreDistribution value="NonLoyal" recordCount="2"/>
+														</Node>
+														<Node id="85" score="NonLoyal" recordCount="3" >
+															<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+															<Extension extender="KGMOD" name="patternPredicate" value="substring">
+																<SimplePredicate field="BrandPattern" operator="notcontain">
+																	<index seqNo="1" value="2"/>
+																	<index seqNo="2" value="2"/>
+																</SimplePredicate>
+															</Extension>
+															<ScoreDistribution value="Loyal" recordCount="1"/>
+															<ScoreDistribution value="NonLoyal" recordCount="2"/>
+														</Node>
+													</Node>
+												</Node>
+												<Node id="86" score="Loyal" recordCount="18" >
+													<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+													<Extension extender="KGMOD" name="patternPredicate" value="substring">
+														<SimplePredicate field="BrandPattern" operator="notcontain">
+															<index seqNo="1" value="2"/>
+															<index seqNo="2" value="1"/>
+															<index seqNo="3" value="1"/>
+														</SimplePredicate>
+													</Extension>
+													<ScoreDistribution value="Loyal" recordCount="9"/>
+													<ScoreDistribution value="NonLoyal" recordCount="9"/>
+													<Node id="87" score="Loyal" recordCount="5" >
+														<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+														<Extension extender="KGMOD" name="patternPredicate" value="substring">
+															<SimplePredicate field="BrandPattern" operator="contain">
+																<index seqNo="1" value="2"/>
+																<index seqNo="2" value="2"/>
+																<index seqNo="3" value="2"/>
+															</SimplePredicate>
+														</Extension>
+														<ScoreDistribution value="Loyal" recordCount="3"/>
+														<ScoreDistribution value="NonLoyal" recordCount="2"/>
+													</Node>
+													<Node id="88" score="NonLoyal" recordCount="13" >
+														<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+														<Extension extender="KGMOD" name="patternPredicate" value="substring">
+															<SimplePredicate field="BrandPattern" operator="notcontain">
+																<index seqNo="1" value="2"/>
+																<index seqNo="2" value="2"/>
+																<index seqNo="3" value="2"/>
+															</SimplePredicate>
+														</Extension>
+														<ScoreDistribution value="Loyal" recordCount="6"/>
+														<ScoreDistribution value="NonLoyal" recordCount="7"/>
+													</Node>
+												</Node>
+											</Node>
+										</Node>
+									</Node>
+								</Node>
+							</Node>
+						</Node>
+					</Node>
+					<Node id="89" score="Loyal" recordCount="72" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000121"/>
+						<Extension extender="KGMOD" name="patternPredicate" value="substring">
+							<SimplePredicate field="BrandPattern" operator="notcontain">
+								<index seqNo="1" value="1"/>
+								<index seqNo="2" value="1"/>
+								<index seqNo="3" value="2"/>
+							</SimplePredicate>
+						</Extension>
+						<ScoreDistribution value="Loyal" recordCount="57"/>
+						<ScoreDistribution value="NonLoyal" recordCount="15"/>
+						<Node id="90" score="Loyal" recordCount="32" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="BrandPattern" operator="contain">
+									<index seqNo="1" value="2"/>
+									<index seqNo="2" value="2"/>
+									<index seqNo="3" value="2"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="Loyal" recordCount="23"/>
+							<ScoreDistribution value="NonLoyal" recordCount="9"/>
+							<Node id="91" score="Loyal" recordCount="11" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="contain">
+										<index seqNo="1" value="1"/>
+										<index seqNo="2" value="1"/>
+										<index seqNo="3" value="1"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="10"/>
+								<ScoreDistribution value="NonLoyal" recordCount="1"/>
+							</Node>
+							<Node id="92" score="Loyal" recordCount="21" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="notcontain">
+										<index seqNo="1" value="1"/>
+										<index seqNo="2" value="1"/>
+										<index seqNo="3" value="1"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="13"/>
+								<ScoreDistribution value="NonLoyal" recordCount="8"/>
+								<Node id="93" score="Loyal" recordCount="4" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="contain">
+											<index seqNo="1" value="1"/>
+											<index seqNo="2" value="2"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="3"/>
+									<ScoreDistribution value="NonLoyal" recordCount="1"/>
+									<Node id="94" score="Loyal" recordCount="2" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="contain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="2"/>
+												<index seqNo="4" value="2"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="1"/>
+										<ScoreDistribution value="NonLoyal" recordCount="1"/>
+										<Node id="95" score="Loyal" recordCount="1" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="contain">
+													<index seqNo="1" value="2"/>
+													<index seqNo="2" value="2"/>
+													<index seqNo="3" value="1"/>
+													<index seqNo="4" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="1"/>
+											<ScoreDistribution value="NonLoyal" recordCount="0"/>
+										</Node>
+										<Node id="96" score="NonLoyal" recordCount="1" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="notcontain">
+													<index seqNo="1" value="2"/>
+													<index seqNo="2" value="2"/>
+													<index seqNo="3" value="1"/>
+													<index seqNo="4" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="0"/>
+											<ScoreDistribution value="NonLoyal" recordCount="1"/>
+										</Node>
+									</Node>
+									<Node id="97" score="Loyal" recordCount="2" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="notcontain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="2"/>
+												<index seqNo="4" value="2"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="2"/>
+										<ScoreDistribution value="NonLoyal" recordCount="0"/>
+									</Node>
+								</Node>
+								<Node id="98" score="Loyal" recordCount="17" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="notcontain">
+											<index seqNo="1" value="1"/>
+											<index seqNo="2" value="2"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="10"/>
+									<ScoreDistribution value="NonLoyal" recordCount="7"/>
+								</Node>
+							</Node>
+						</Node>
+						<Node id="99" score="Loyal" recordCount="40" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="BrandPattern" operator="notcontain">
+									<index seqNo="1" value="2"/>
+									<index seqNo="2" value="2"/>
+									<index seqNo="3" value="2"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="Loyal" recordCount="34"/>
+							<ScoreDistribution value="NonLoyal" recordCount="6"/>
+						</Node>
+					</Node>
+				</Node>
+			</Node>
+			<Node id="100" score="NonLoyal" recordCount="863" >
+				<Extension extender="KGMOD" name="complexity penalty" value="0.002418"/>
+				<Extension extender="KGMOD" name="patternPredicate" value="substring">
+					<SimplePredicate field="BrandPattern" operator="notcontain">
+						<index seqNo="1" value="1"/>
+						<index seqNo="2" value="1"/>
+					</SimplePredicate>
+				</Extension>
+				<ScoreDistribution value="Loyal" recordCount="134"/>
+				<ScoreDistribution value="NonLoyal" recordCount="729"/>
+				<Node id="101" score="NonLoyal" recordCount="161" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+					<Extension extender="KGMOD" name="patternPredicate" value="substring">
+						<SimplePredicate field="BrandPattern" operator="contain">
+							<index seqNo="1" value="1"/>
+						</SimplePredicate>
+					</Extension>
+					<ScoreDistribution value="Loyal" recordCount="68"/>
+					<ScoreDistribution value="NonLoyal" recordCount="93"/>
+					<Node id="102" score="NonLoyal" recordCount="121" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.001814"/>
+						<Extension extender="KGMOD" name="patternPredicate" value="substring">
+							<SimplePredicate field="BrandPattern" operator="contain">
+								<index seqNo="1" value="1"/>
+								<index seqNo="2" value="2"/>
+							</SimplePredicate>
+						</Extension>
+						<ScoreDistribution value="Loyal" recordCount="44"/>
+						<ScoreDistribution value="NonLoyal" recordCount="77"/>
+						<Node id="103" score="NonLoyal" recordCount="114" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000605"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="BrandPattern" operator="contain">
+									<index seqNo="1" value="2"/>
+									<index seqNo="2" value="2"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="Loyal" recordCount="39"/>
+							<ScoreDistribution value="NonLoyal" recordCount="75"/>
+							<Node id="104" score="NonLoyal" recordCount="36" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000403"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="contain">
+										<index seqNo="1" value="2"/>
+										<index seqNo="2" value="2"/>
+										<index seqNo="3" value="2"/>
+										<index seqNo="4" value="2"/>
+										<index seqNo="5" value="2"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="10"/>
+								<ScoreDistribution value="NonLoyal" recordCount="26"/>
+								<Node id="105" score="NonLoyal" recordCount="21" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="contain">
+											<index seqNo="1" value="2"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="8"/>
+									<ScoreDistribution value="NonLoyal" recordCount="13"/>
+									<Node id="106" score="NonLoyal" recordCount="20" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="contain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="2"/>
+												<index seqNo="4" value="1"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="7"/>
+										<ScoreDistribution value="NonLoyal" recordCount="13"/>
+										<Node id="107" score="Loyal" recordCount="3" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="contain">
+													<index seqNo="1" value="1"/>
+													<index seqNo="2" value="2"/>
+													<index seqNo="3" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="2"/>
+											<ScoreDistribution value="NonLoyal" recordCount="1"/>
+										</Node>
+										<Node id="108" score="NonLoyal" recordCount="17" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="notcontain">
+													<index seqNo="1" value="1"/>
+													<index seqNo="2" value="2"/>
+													<index seqNo="3" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="5"/>
+											<ScoreDistribution value="NonLoyal" recordCount="12"/>
+										</Node>
+									</Node>
+									<Node id="109" score="Loyal" recordCount="1" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="notcontain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="2"/>
+												<index seqNo="4" value="1"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="1"/>
+										<ScoreDistribution value="NonLoyal" recordCount="0"/>
+									</Node>
+								</Node>
+								<Node id="110" score="NonLoyal" recordCount="15" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="notcontain">
+											<index seqNo="1" value="2"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="1"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="2"/>
+									<ScoreDistribution value="NonLoyal" recordCount="13"/>
+								</Node>
+							</Node>
+							<Node id="111" score="NonLoyal" recordCount="78" >
+								<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+								<Extension extender="KGMOD" name="patternPredicate" value="substring">
+									<SimplePredicate field="BrandPattern" operator="notcontain">
+										<index seqNo="1" value="2"/>
+										<index seqNo="2" value="2"/>
+										<index seqNo="3" value="2"/>
+										<index seqNo="4" value="2"/>
+										<index seqNo="5" value="2"/>
+									</SimplePredicate>
+								</Extension>
+								<ScoreDistribution value="Loyal" recordCount="29"/>
+								<ScoreDistribution value="NonLoyal" recordCount="49"/>
+								<Node id="112" score="NonLoyal" recordCount="20" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="contain">
+											<index seqNo="1" value="2"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="2"/>
+											<index seqNo="4" value="2"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="9"/>
+									<ScoreDistribution value="NonLoyal" recordCount="11"/>
+									<Node id="113" score="NonLoyal" recordCount="15" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="contain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="1"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="5"/>
+										<ScoreDistribution value="NonLoyal" recordCount="10"/>
+									</Node>
+									<Node id="114" score="Loyal" recordCount="5" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="notcontain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="1"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="4"/>
+										<ScoreDistribution value="NonLoyal" recordCount="1"/>
+									</Node>
+								</Node>
+								<Node id="115" score="NonLoyal" recordCount="58" >
+									<Extension extender="KGMOD" name="complexity penalty" value="0.000605"/>
+									<Extension extender="KGMOD" name="patternPredicate" value="substring">
+										<SimplePredicate field="BrandPattern" operator="notcontain">
+											<index seqNo="1" value="2"/>
+											<index seqNo="2" value="2"/>
+											<index seqNo="3" value="2"/>
+											<index seqNo="4" value="2"/>
+										</SimplePredicate>
+									</Extension>
+									<ScoreDistribution value="Loyal" recordCount="20"/>
+									<ScoreDistribution value="NonLoyal" recordCount="38"/>
+									<Node id="116" score="NonLoyal" recordCount="28" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="contain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="2"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="8"/>
+										<ScoreDistribution value="NonLoyal" recordCount="20"/>
+										<Node id="117" score="Loyal" recordCount="2" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="contain">
+													<index seqNo="1" value="1"/>
+													<index seqNo="2" value="2"/>
+													<index seqNo="3" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="2"/>
+											<ScoreDistribution value="NonLoyal" recordCount="0"/>
+										</Node>
+										<Node id="118" score="NonLoyal" recordCount="26" >
+											<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+											<Extension extender="KGMOD" name="patternPredicate" value="substring">
+												<SimplePredicate field="BrandPattern" operator="notcontain">
+													<index seqNo="1" value="1"/>
+													<index seqNo="2" value="2"/>
+													<index seqNo="3" value="1"/>
+												</SimplePredicate>
+											</Extension>
+											<ScoreDistribution value="Loyal" recordCount="6"/>
+											<ScoreDistribution value="NonLoyal" recordCount="20"/>
+										</Node>
+									</Node>
+									<Node id="119" score="NonLoyal" recordCount="30" >
+										<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+										<Extension extender="KGMOD" name="patternPredicate" value="substring">
+											<SimplePredicate field="BrandPattern" operator="notcontain">
+												<index seqNo="1" value="2"/>
+												<index seqNo="2" value="2"/>
+												<index seqNo="3" value="2"/>
+											</SimplePredicate>
+										</Extension>
+										<ScoreDistribution value="Loyal" recordCount="12"/>
+										<ScoreDistribution value="NonLoyal" recordCount="18"/>
+									</Node>
+								</Node>
+							</Node>
+						</Node>
+						<Node id="120" score="Loyal" recordCount="7" >
+							<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+							<Extension extender="KGMOD" name="patternPredicate" value="substring">
+								<SimplePredicate field="BrandPattern" operator="notcontain">
+									<index seqNo="1" value="2"/>
+									<index seqNo="2" value="2"/>
+								</SimplePredicate>
+							</Extension>
+							<ScoreDistribution value="Loyal" recordCount="5"/>
+							<ScoreDistribution value="NonLoyal" recordCount="2"/>
+						</Node>
+					</Node>
+					<Node id="121" score="Loyal" recordCount="40" >
+						<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+						<Extension extender="KGMOD" name="patternPredicate" value="substring">
+							<SimplePredicate field="BrandPattern" operator="notcontain">
+								<index seqNo="1" value="1"/>
+								<index seqNo="2" value="2"/>
+							</SimplePredicate>
+						</Extension>
+						<ScoreDistribution value="Loyal" recordCount="24"/>
+						<ScoreDistribution value="NonLoyal" recordCount="16"/>
+					</Node>
+				</Node>
+				<Node id="122" score="NonLoyal" recordCount="702" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+					<Extension extender="KGMOD" name="patternPredicate" value="substring">
+						<SimplePredicate field="BrandPattern" operator="notcontain">
+							<index seqNo="1" value="1"/>
+						</SimplePredicate>
+					</Extension>
+					<ScoreDistribution value="Loyal" recordCount="66"/>
+					<ScoreDistribution value="NonLoyal" recordCount="636"/>
+				</Node>
+			</Node>
+		</Node>
+	</TreeModel>
+</PMML>

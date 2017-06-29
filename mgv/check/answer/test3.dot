@@ -1,0 +1,13 @@
+digraph G {
+  edge [dir=none]
+n_2 [label="a" style="setlinewidth(1)" ]
+n_3 [label="b" style="setlinewidth(1)" ]
+n_4 [label="c" style="setlinewidth(1)" ]
+n_5 [label="d" style="setlinewidth(1)" ]
+n_6 [label="e" style="setlinewidth(1)" ]
+n_2 -> n_3 []
+n_2 -> n_4 []
+n_3 -> n_5 []
+n_4 -> n_6 []
+n_5 -> n_6 []
+}

@@ -1,0 +1,25 @@
+digraph G {
+  edge [dir=none]
+  subgraph cluster_1 {
+n_5 [label="a" style="setlinewidth(1)" ]
+n_6 [label="b" style="setlinewidth(1)" ]
+n_5 -> n_6 [label="0.1" style="setlinewidth(1)" ]
+  }
+  subgraph cluster_2 {
+n_8 [label="d" style="setlinewidth(1)" ]
+n_9 [label="e" style="setlinewidth(1)" ]
+n_8 -> n_9 [label="0.1" style="setlinewidth(1)" ]
+  }
+  subgraph cluster_3 {
+cluster_1 []
+n_7 [label="c" style="setlinewidth(1)" ]
+cluster_1 -> n_7 [label="0.2" style="setlinewidth(7.333333333)" ]
+  }
+  subgraph cluster_4 {
+cluster_2 []
+cluster_3 []
+n_10 [label="f" style="setlinewidth(1)" ]
+cluster_2 -> cluster_3 [label="0.3" style="setlinewidth(13.66666667)" ]
+cluster_3 -> n_10 [label="0.4" style="setlinewidth(20)" ]
+  }
+}

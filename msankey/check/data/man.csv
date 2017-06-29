@@ -1,0 +1,12 @@
+node1,node2,val
+a,b,1
+a,c,2
+a,d,1
+a,e,1
+b,c,4
+b,d,3
+b,f,1
+c,d,2
+c,e,2
+d,e,1
+e,f,3

@@ -1,0 +1,49 @@
+[alphabet-index]
+Field Name: 購入パターン
+Index[1]={A}
+Index[2]={B}
+Index[3]={C}
+Index[4]={D}
+Index[5]={E}
+
+[decision tree]
+if($来店距離 <= 2.15 )
+  then if($購入パターン has 44)
+    then $入院歴=あり (hit/sup)=(7/8)
+    else if($購入パターン has 12)
+      then $入院歴=あり (hit/sup)=(5/5)
+      else $入院歴=なし (hit/sup)=(26/26)
+  else if($購入パターン has 211)
+    then $入院歴=なし (hit/sup)=(3/3)
+    else if($購入パターン has 1)
+      then $入院歴=あり (hit/sup)=(32/32)
+      else if($購入パターン has 44)
+        then $入院歴=あり (hit/sup)=(5/5)
+        else $入院歴=なし (hit/sup)=(2/2)
+
+numberOfLeaves=7
+deepestLevel==4
+
+[Confusion Matrix by Training]
+## By count
+         Predicted As ...
+	あり	なし	Total
+あり	49	0	49
+なし	1	31	32
+Total	50	31	81
+
+## By cost
+         Predicted As ...
+	あり	なし	Total
+あり	0	0	0
+なし	1	0	1
+Total	1	0	1
+
+## Detailed accuracy by class
+class,recall,precision,FPrate,F-measure
+あり,1,0.98,0.03125,0.989899
+なし,0.96875,1,0,0.984127
+
+## Summary
+accuracy=0.987654
+totalCost=1

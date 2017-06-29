@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.0">
+	<Header copyright="KGMOD">
+		<Application name="mclassify" version="1.0"/>
+		<Timestamp>2014/09/12 17:35:24</Timestamp>
+	</Header>
+	<DataDictionary numberOfFields="2">
+		<DataField name="ブランド系列" optype="categorical" dataType="string">
+			<Value value="b"/>
+			<Value value="c"/>
+			<Value value="a"/>
+		</DataField>
+		<DataField name="離反" optype="categorical" dataType="string">
+			<Value value="yes"/>
+			<Value value="no"/>
+		</DataField>
+	</DataDictionary>
+	<TreeModel functionName="classification" splitCharacteristic="binarySplit">
+		<Extension extender="KGMOD" name="alpha" value="0.010000"/>
+		<MiningSchema>
+			<MiningField name="ブランド系列">
+				<Extension extender="KGMOD" name="alphabetIndex">
+					<alphabetIndex alphabet="b" index="2"/>
+					<alphabetIndex alphabet="c" index="2"/>
+					<alphabetIndex alphabet="a" index="1"/>
+				</Extension>
+				<Extension extender="KGMOD" name="indexSize" value="2"/>
+				<Extension extender="KGMOD" name="order" value="false"/>
+				<Extension extender="KGMOD" name="subsequence" value="false"/>
+				<Extension extender="KGMOD" name="indexLen" value="5"/>
+			</MiningField>
+			<MiningField name="離反" usageType="predicted"/>
+		</MiningSchema>
+		<Node id="0" score="yes" recordCount="8" >
+			<Extension extender="KGMOD" name="complexity penalty" value="0.375000"/>
+			<True/>
+			<ScoreDistribution value="yes" recordCount="4"/>
+			<ScoreDistribution value="no" recordCount="4"/>
+			<Node id="1" score="yes" recordCount="3" >
+				<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+				<Extension extender="KGMOD" name="patternPredicate" value="substring">
+					<SimplePredicate field="ブランド系列" operator="contain">
+						<index seqNo="1" value="1"/>
+						<index seqNo="2" value="1"/>
+					</SimplePredicate>
+				</Extension>
+				<ScoreDistribution value="yes" recordCount="3"/>
+				<ScoreDistribution value="no" recordCount="0"/>
+			</Node>
+			<Node id="2" score="no" recordCount="5" >
+				<Extension extender="KGMOD" name="complexity penalty" value="0.125000"/>
+				<Extension extender="KGMOD" name="patternPredicate" value="substring">
+					<SimplePredicate field="ブランド系列" operator="notcontain">
+						<index seqNo="1" value="1"/>
+						<index seqNo="2" value="1"/>
+					</SimplePredicate>
+				</Extension>
+				<ScoreDistribution value="yes" recordCount="1"/>
+				<ScoreDistribution value="no" recordCount="4"/>
+				<Node id="3" score="yes" recordCount="1" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+					<Extension extender="KGMOD" name="patternPredicate" value="substring">
+						<SimplePredicate field="ブランド系列" operator="contain">
+							<index seqNo="1" value="2"/>
+							<index seqNo="2" value="2"/>
+							<index seqNo="3" value="1"/>
+							<index seqNo="4" value="2"/>
+						</SimplePredicate>
+					</Extension>
+					<ScoreDistribution value="yes" recordCount="1"/>
+					<ScoreDistribution value="no" recordCount="0"/>
+				</Node>
+				<Node id="4" score="no" recordCount="4" >
+					<Extension extender="KGMOD" name="complexity penalty" value="0.000000"/>
+					<Extension extender="KGMOD" name="patternPredicate" value="substring">
+						<SimplePredicate field="ブランド系列" operator="notcontain">
+							<index seqNo="1" value="2"/>
+							<index seqNo="2" value="2"/>
+							<index seqNo="3" value="1"/>
+							<index seqNo="4" value="2"/>
+						</SimplePredicate>
+					</Extension>
+					<ScoreDistribution value="yes" recordCount="0"/>
+					<ScoreDistribution value="no" recordCount="4"/>
+				</Node>
+			</Node>
+		</Node>
+	</TreeModel>
+</PMML>
