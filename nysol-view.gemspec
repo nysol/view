@@ -32,7 +32,7 @@ spec = Gem::Specification.new do |s|
 		"mdtree.rb"
 	]
 	s.require_path = "lib"
-
+	s.add_dependency "nysol" ,"~> 3.0.0"
 	s.description = <<-EOF
 	  nysol VIEW tools
 	EOF
