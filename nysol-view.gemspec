@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 spec = Gem::Specification.new do |s|
   s.name="nysol-view"
-  s.version="3.0.1"
+  s.version="3.0.2"
   s.author="NYSOL"
   s.email="info@nysol.jp"
   s.homepage="http://www.nysol.jp/"

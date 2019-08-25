@@ -23,7 +23,7 @@ STDERR.puts <<EOF
 circle pieChart 画像 をNodeとして利用可能
 
 EOF
-
+exit
 end
 
 def ver()
