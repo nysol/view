@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 spec = Gem::Specification.new do |s|
   s.name="nysol-view"
-  s.version="3.0.0"
+  s.version="3.0.1"
   s.author="NYSOL"
   s.email="info@nysol.jp"
   s.homepage="http://www.nysol.jp/"
@@ -18,6 +18,7 @@ spec = Gem::Specification.new do |s|
 		"bin/mautocolor.rb",
 		"bin/mnest2tree.rb",
 		"bin/msankey.rb",
+		"bin/mnetpie.rb",
 		"bin/mpie.rb"
 	]
 	s.bindir = 'bin'
@@ -29,6 +30,7 @@ spec = Gem::Specification.new do |s|
 		"msankey.rb",
 		"mbar.rb",
 		"mpie.rb",
+		"mnetpie.rb",
 		"mdtree.rb"
 	]
 	s.require_path = "lib"

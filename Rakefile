@@ -10,6 +10,7 @@ fList = [
 	"bin/mautocolor.rb",
 	"bin/mnest2tree.rb",
 	"bin/msankey.rb",
+	"bin/mnetpie.rb",
 	"bin/mpie.rb"
 ]
 
@@ -43,6 +44,10 @@ file "bin/msankey.rb" => "msankey/bin/msankey.rb" do |t|
 end
 
 file "bin/mpie.rb" => "mpie/bin/mpie.rb" do |t|
+	cp t.source, t.name
+end
+
+file "bin/mnetpie.rb" => "mnetpie/bin/mnetpie.rb" do |t|
 	cp t.source, t.name
 end
 
