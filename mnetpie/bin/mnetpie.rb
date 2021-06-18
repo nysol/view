@@ -238,9 +238,11 @@ system(f)
 
 
 gdata="{\"nodes\":["
+
+nodedatastk = []
+
 if caseNo == 1 then
 	MCMD::Mcsvin::new("i=#{nftmp} k=nodeid -q"){|csv|
-		nodedatastk = []
 		nodedatas =""
   	csv.each{|val,top,btm|
    		name = val["node"]
@@ -274,8 +276,6 @@ if caseNo == 1 then
 				nodedatas << ","
 			end
   	}	
-		gdata << nodedatastk.join(',')
-
 	}
 else
 
@@ -298,33 +298,78 @@ else
 	    nodedatas << "}"
 	    nodedatastk <<  nodedatas
     }
-    gdata << nodedatastk.join(',')
 	}
 
 end
 
-gdata << "],\"links\": ["
 
+edgedatastk = []
 
 MCMD::Mcsvin::new("i=#{efxtmp}"){|csv|
-	edgedatastk = []
 	csv.each{|val|
     es = val["edgeSid"]
     et = val["edgeEid"]
     esize = val["edgesize"]
     ecolor = val["edgecolor"]
-    edgedatas = ""
-	  edgedatas << "{"
-	  edgedatas << "\"source\": #{es},"
-	  edgedatas << "\"target\": #{et},"
-	  edgedatas << "\"length\": 500,"
-	  edgedatas << "\"ewidth\": #{esize},"
-	  edgedatas << "\"color\": \"#{ecolor}\""
-  	edgedatas << "}"
-	  edgedatastk <<  edgedatas
+		if es==et then
+			#dmy node
+			dno = nodedatastk.size
+    	nodedatas =""
+	    nodedatas << "{"
+	    nodedatas <<	 "\"name\": \"\","
+			nodedatas <<	 "\"title\": \"\","
+			nodedatas <<	 "\"pic\": \"\","
+			nodedatas <<	 "\"color\": \"\","
+	    nodedatas <<	 "\"r\": 0"
+	    nodedatas << "}"			
+			nodedatastk << nodedatas
+			nodedatastk << nodedatas
+	    edgedatas = ""
+		  edgedatas << "{"
+	 		edgedatas << "\"source\": #{es},"
+	  	edgedatas << "\"target\": #{dno},"
+	  	edgedatas << "\"length\": 10,"
+	  	edgedatas << "\"ewidth\": #{esize},"
+	  	edgedatas << "\"color\": \"#{ecolor}\""
+  		edgedatas << "}"
+	  	edgedatastk <<  edgedatas
+
+	    edgedatas = ""
+		  edgedatas << "{"
+	 		edgedatas << "\"source\": #{dno},"
+	  	edgedatas << "\"target\": #{dno+1},"
+	  	edgedatas << "\"length\": 10,"
+	  	edgedatas << "\"ewidth\": #{esize},"
+	  	edgedatas << "\"color\": \"#{ecolor}\""
+  		edgedatas << "}"
+	  	edgedatastk <<  edgedatas
+
+	    edgedatas = ""
+		  edgedatas << "{"
+	 		edgedatas << "\"source\": #{dno+1},"
+	  	edgedatas << "\"target\": #{et},"
+	  	edgedatas << "\"length\": 10,"
+	  	edgedatas << "\"ewidth\": #{esize},"
+	  	edgedatas << "\"color\": \"#{ecolor}\""
+  		edgedatas << "}"
+	  	edgedatastk <<  edgedatas
+		else
+	    edgedatas = ""
+		  edgedatas << "{"
+	 		edgedatas << "\"source\": #{es},"
+	  	edgedatas << "\"target\": #{et},"
+	  	edgedatas << "\"length\": 500,"
+	  	edgedatas << "\"ewidth\": #{esize},"
+	  	edgedatas << "\"color\": \"#{ecolor}\""
+  		edgedatas << "}"
+	  	edgedatastk <<  edgedatas
+		end
 	}
-	gdata << edgedatastk.join(',')
 }
+
+gdata << nodedatastk.join(',')
+gdata << "],\"links\": ["
+gdata << edgedatastk.join(',')
 gdata << "]}"
 
 direct = ".attr('marker-end','url(#arrowhead)')"
@@ -471,7 +516,7 @@ outTemplate =<<OUT
 
 	var force = 
 		d3.layout.force()
-			.linkDistance(200)
+			.linkDistance(100)
 			.linkStrength(3.5)
       .charge(-3500)
 			.gravity(0.1)
